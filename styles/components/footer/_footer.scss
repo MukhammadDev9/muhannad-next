@@ -1,0 +1,53 @@
+.footer {
+    background-color: $primary-color;
+    color: $white-color;
+    padding: 70px 0 87px 0;
+
+    &__container {
+        @include flex(flex-start, space-between);
+    }
+
+    &__list {
+        font-size: $font-size-16;
+        font-weight: 400;
+        line-height: 19px;
+
+        &-item:not(:last-child) {
+            margin-bottom: 44px;
+        }
+    }
+
+    &__content {
+        height: 100%;
+        line-height: 140%;
+
+        &-item {
+            max-width: 320px;
+            &:not(:last-child) {
+                margin-bottom: 18px;
+            }
+        }
+    }
+
+    &__contacts {
+    }
+
+    .media__list {
+        @include flex(center, flex-start);
+        margin-bottom: 26px;
+
+        &-item {
+            margin-right: 36px;
+        }
+    }
+
+    &__call-link {
+        margin-bottom: 16px;
+        font-weight: 400 !important;
+    }
+
+    &__address {
+        max-width: 315px;
+        line-height: 19px;
+    }
+}

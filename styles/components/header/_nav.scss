@@ -1,0 +1,26 @@
+.nav {
+    &__list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        @include adaptive-value('gap', 48, 1, 1);
+    }
+
+    &__item {
+        font-weight: 400;
+        font-size: $font-size-16;
+        list-style: 19px;
+        color: $dark-grey-color;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+
+.current {
+    font-weight: 700;
+    color: $primary-color;
+}

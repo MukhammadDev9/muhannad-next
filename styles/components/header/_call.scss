@@ -1,0 +1,16 @@
+.call {
+    &-wrapper {
+        @include flex(center, space-between);
+    }
+
+    &-icon {
+        margin-right: 20px;
+    }
+
+    &-link {
+        font-size: $font-size-16;
+        font-style: normal;
+        line-height: 19px;
+        color: $white-color;
+    }
+}

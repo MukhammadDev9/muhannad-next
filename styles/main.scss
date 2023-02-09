@@ -1,0 +1,18 @@
+// Default
+@import './global/variables';
+@import './global/normalize';
+
+// Mixins
+@import './mixins/mixins';
+
+// Global
+@import './global/settings';
+
+// Atoms
+@import './components/atoms/logo';
+
+// Layout
+@import './components/header/header';
+@import './components/header/nav';
+@import './components/header/call';
+@import './components/footer/footer';
