@@ -49,7 +49,7 @@ $maxWidthContainer: 1180;
     }
 }
 
-@mixin adaptiveWith($width) {
+@mixin adaptiveWidth($width) {
     width: $width + px;
     height: ($width/1.60) + px;
 }

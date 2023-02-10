@@ -6,8 +6,8 @@
 
 .container {
     width: 100%;
-    max-width: 1180px;
-    // padding: 0 20px;
+    max-width: 1228px;
+    padding: 0 24px;
     margin: 0 auto;
 }
 
@@ -24,17 +24,24 @@
 .btn {
     background-color: $primary-color;
     border: 1px solid $primary-color;
-    padding: 15px 40px;
-    font-size: $font-size-18;
-    font-weight: 700;
     font-family: $inter;
-    line-height: 22px;
     color: $white-color;
     transition: all 0.4s ease;
+    @include font($font-size-18, $font-size-14, 700, 22px);
+    @include adaptive-value('line-height', 22, 17, 1);
+    @include adaptive-value('padding-block', 15, 10, 1);
+    @include adaptive-value('padding-inline', 40, 20, 1);
 
-    &:hover {
+    &:focus {
         background: $white-color;
         color: $primary-color;
+    }
+
+    @include media-desktop(1024) {
+        &:hover {
+            background: $white-color;
+            color: $primary-color;
+        }
     }
 }
 .btn-call {

@@ -5,8 +5,11 @@ import { BsFacebook, BsInstagram, BsTelegram } from 'react-icons/bs';
 import FirstCallLink from './CallLinks/FirstCallLink';
 import SecondCallLink from './CallLinks/SecondCallLink';
 import SocialMedia from '../SocialMedia';
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 const Footer = () => {
+    const isMobile = useIsMobile();
+
     return (
         <footer className="footer">
             <div className="container">
@@ -47,7 +50,7 @@ const Footer = () => {
                     </div>
 
                     <div className="footer__contacts">
-                        <SocialMedia />
+                        {!isMobile && <SocialMedia />}
                         <div className="footer__call-link">
                             <span>Номер телефона: </span>
                             <CallLink />

@@ -5,6 +5,8 @@
 
     &__container {
         @include flex(flex-start, space-between);
+
+        flex-wrap: wrap;
     }
 
     &__list {

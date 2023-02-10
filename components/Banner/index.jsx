@@ -21,8 +21,7 @@ const Banner = () => {
                 <div className="banner-video-border" />
                 <div className="banner-video">
                     <Image
-                        width={470}
-                        height={410}
+                        className="banner-image"
                         src={BannerImage}
                         alt="banner-image"
                     />

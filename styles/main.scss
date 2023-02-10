@@ -4,6 +4,7 @@
 
 // Mixins
 @import './mixins/mixins';
+@import './mixins/media-mixins';
 
 // Global
 @import './global/settings';
@@ -19,4 +20,4 @@
 @import './components/footer/social-media';
 
 // Home
-@import './components/banner/banner';
+@import './components/home/banner';

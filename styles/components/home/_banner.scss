@@ -1,0 +1,88 @@
+.banner {
+    display: flex;
+    column-gap: 52px;
+    @include adaptive-value('padding-top', 130, 62, 1);
+    @include adaptive-value('margin-bottom', 130, 56, 1);
+
+    @include media(756) {
+        @include adaptive-value('row-gap', 50, 35, 1);
+        padding-top: 62px;
+        margin-bottom: 56px;
+        flex-direction: column-reverse;
+    }
+
+    &__title {
+        @include font($font-size-36, $font-size-18, 700, 44px);
+        @include adaptive-value('line-height', 44, 22, 1);
+        @include adaptive-value('margin-bottom', 35, 18, 1);
+        color: $primary-color;
+
+        @include media(375) {
+            font-size: $font-size-18;
+        }
+    }
+
+    &__subtitle {
+        @include font($font-size-26, $font-size-14, 700, 31px);
+        @include adaptive-value('line-height', 31, 17, 1);
+        color: $dark-grey-color;
+        margin-bottom: 16px;
+    }
+
+    &__description {
+        @include font($font-size-16, $font-size-14, 500, 19px);
+        @include adaptive-value('line-height', 19, 17, 1);
+        @include adaptive-value('margin-bottom', 32, 26, 1);
+        color: $light-grey-color;
+    }
+
+    &__subtitle,
+    &__description {
+        @include media(375) {
+            font-size: $font-size-14;
+        }
+    }
+
+    &__left {
+        @include flex(flex-start, center);
+        flex-direction: column;
+    }
+
+    &__right {
+        @include adaptive-value('width', 475, 305, 1);
+        @include adaptive-value('height', 430, 275, 1);
+        margin: 0 auto;
+        position: relative;
+        @include center();
+    }
+
+    &-image {
+        @include adaptive-value('width', 470, 300, 1);
+        @include adaptive-value('height', 410, 261, 1);
+    }
+}
+
+.banner-video {
+    border-radius: $border-radius;
+    overflow: hidden;
+    z-index: 10;
+    @include center();
+
+    &-border {
+        position: absolute;
+        top: -18px;
+        bottom: 0;
+        left: -5px;
+        right: 0;
+        background-color: transparent;
+        border: 1px solid $primary-color;
+        border-radius: $border-radius;
+        transform: matrix(1, -0.09, 0.09, 1, 0, 0);
+        z-index: 9;
+
+        @include media(756) {
+            top: -4px;
+            left: 0;
+        }
+    }
+}

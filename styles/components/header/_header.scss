@@ -9,8 +9,7 @@
 
     &__container {
         @include flex(center, space-between);
-        padding: 26px 0 21px 0;
-
-        
+        @include adaptive-value('padding-top', 26, 30, 1);
+        @include adaptive-value('padding-bottom', 21, 30, 1);
     }
 }
