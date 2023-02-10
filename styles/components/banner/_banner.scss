@@ -1,0 +1,53 @@
+.banner {
+    @include flex(center, space-between);
+    column-gap: 52px;
+    padding: 130px 0;
+
+    &__title {
+        @include font(36, 18, 700, 44px);
+        color: $primary-color;
+        margin-bottom: 35px;
+    }
+
+    &__subtitle {
+        @include font(26, 14, 700, 31px);
+        color: $dark-grey-color;
+        margin-bottom: 16px;
+    }
+
+    &__description {
+        @include font(16, 14, 500, 19px);
+        color: $light-grey-color;
+        margin-bottom: 32px;
+    }
+
+    &__left {
+    }
+
+    &__right {
+        position: relative;
+        @include center();
+    }
+
+    &-video {
+        border-radius: $border-radius;
+        overflow: hidden;
+        z-index: 10;
+        @include center();
+    }
+
+    &-video-border {
+        width: 475px;
+        height: 430px;
+        position: absolute;
+        top: -18px;
+        bottom: 18px;
+        left: -5px;
+        right: 5px;
+        background-color: transparent;
+        border: 1px solid $primary-color;
+        border-radius: $border-radius;
+        transform: matrix(1, -0.09, 0.09, 1, 0, 0);
+        z-index: 9;
+    }
+}

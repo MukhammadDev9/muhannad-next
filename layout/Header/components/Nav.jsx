@@ -4,10 +4,18 @@ const Nav = () => {
     return (
         <nav className="nav">
             <ul className="nav__list">
-                <li className="nav__item current">Главная</li>
-                <li className="nav__item">О нас</li>
-                <li className="nav__item">Наши услуги</li>
-                <li className="nav__item">Контакты</li>
+                <li className="nav__item current">
+                    <a href="#">Главная</a>
+                </li>
+                <li className="nav__item">
+                    <a href="#">О нас</a>
+                </li>
+                <li className="nav__item">
+                    <a href="#">Наши услуги</a>
+                </li>
+                <li className="nav__item">
+                    <a href="#">Контакты</a>
+                </li>
             </ul>
         </nav>
     );

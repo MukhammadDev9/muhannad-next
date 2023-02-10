@@ -1,0 +1,8 @@
+.media__list {
+    @include flex(center, flex-start);
+    margin-bottom: 26px;
+
+    &-item {
+        margin-right: 36px;
+    }
+}

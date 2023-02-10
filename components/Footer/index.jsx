@@ -4,6 +4,7 @@ import Logo from '@/components/Atoms/Logo';
 import { BsFacebook, BsInstagram, BsTelegram } from 'react-icons/bs';
 import FirstCallLink from './CallLinks/FirstCallLink';
 import SecondCallLink from './CallLinks/SecondCallLink';
+import SocialMedia from '../SocialMedia';
 
 const Footer = () => {
     return (
@@ -46,20 +47,7 @@ const Footer = () => {
                     </div>
 
                     <div className="footer__contacts">
-                        <ul className="media__list">
-                            <li className="media__list-item">
-                                <BsTelegram size={24} className="media__icon" />
-                            </li>
-                            <li className="media__list-item">
-                                <BsFacebook size={24} className="media__icon" />
-                            </li>
-                            <li className="media__list-item">
-                                <BsInstagram
-                                    size={24}
-                                    className="media__icon"
-                                />
-                            </li>
-                        </ul>
+                        <SocialMedia />
                         <div className="footer__call-link">
                             <span>Номер телефона: </span>
                             <CallLink />

@@ -7,8 +7,6 @@ const Head = ({ title = 'Muhannad Sinov Service' }) => {
             <title>{title}</title>
             <meta name="og:title" content={title} />
 
-            {/* Description */}
-
             {/* General */}
             <meta name="author" content="appx group" />
 

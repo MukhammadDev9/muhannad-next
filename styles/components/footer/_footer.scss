@@ -29,18 +29,6 @@
         }
     }
 
-    &__contacts {
-    }
-
-    .media__list {
-        @include flex(center, flex-start);
-        margin-bottom: 26px;
-
-        &-item {
-            margin-right: 36px;
-        }
-    }
-
     &__call-link {
         margin-bottom: 16px;
         font-weight: 400 !important;
