@@ -17,8 +17,12 @@
 }
 
 .title {
-    font-size: $font-size-36;
+    @include font(36, 24, 500, 44px);
     color: $primary-color;
+
+    @include mobile {
+        line-height: 29px;
+    }
 }
 
 .btn {
@@ -52,7 +56,7 @@
     @include adaptive-value('padding-inline', 30, 10, 1);
     border-radius: $border-radius;
 
-    @include mobile {
+    @include tablet {
         padding: 8px 10px;
 
         span {

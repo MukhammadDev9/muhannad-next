@@ -4,7 +4,7 @@
         flex-wrap: wrap;
         @include adaptive-value('gap', 48, 18, 1);
 
-        @include mobile {
+        @include media(755) {
             @include flex(flex-start);
             flex-direction: column;
             margin-bottom: 58px;
@@ -19,7 +19,7 @@
         cursor: pointer;
         transition: all 0.3s ease;
 
-        @include media-desktop(1024) {
+        @include media-desktop(768) {
             &:hover {
                 color: $primary-color;
             }
@@ -28,6 +28,5 @@
 }
 
 .current {
-    font-weight: 700;
     color: $primary-color;
 }

@@ -5,10 +5,10 @@ const Nav = () => {
         <nav className="nav">
             <ul className="nav__list">
                 <li className="nav__item current">
-                    <a href="#">Главная</a>
+                    <a href="#banner">Главная</a>
                 </li>
                 <li className="nav__item">
-                    <a href="#">О нас</a>
+                    <a href="#about-us">О нас</a>
                 </li>
                 <li className="nav__item">
                     <a href="#">Наши услуги</a>

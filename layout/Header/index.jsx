@@ -9,7 +9,7 @@ import BurgerMenu from '@/components/BurgerMenu';
 
 const Header = () => {
     const [show, setShow] = useState(false);
-    const isMobile = useIsMobile();
+    const isMobile = useIsMobile(756);
 
     useEffect(() => {
         if (show) {

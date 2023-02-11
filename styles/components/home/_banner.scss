@@ -1,10 +1,11 @@
 .banner {
     display: inline-flex;
     column-gap: 52px;
-    @include adaptive-value('padding-top', 130, 62, 1);
-    @include adaptive-value('margin-bottom', 130, 56, 1);
+    @include adaptive-value('padding-top', 100, 62, 1);
+    @include adaptive-value('margin-bottom', 130, 26, 1);
+    scroll-margin-top: $header-height + 25;
 
-    @include media(756) {
+    @include media(768) {
         @include adaptive-value('row-gap', 50, 35, 1);
         padding-top: 62px;
         margin-bottom: 56px;
@@ -54,11 +55,42 @@
         margin: 0 auto;
         position: relative;
         @include center();
+
+        @include media(426) {
+            width: 256px;
+            height: 275px;
+            object-fit: cover;
+        }
+
+        &:hover {
+            .banner-video-border {
+                top: 18px;
+                right: 6px;
+                bottom: 18px;
+                left: 2px;
+                transform: rotate(0);
+
+                @include mobile {
+                    top: 22px;
+                    right: 20px;
+                    bottom: 22px;
+                    left: 20px;
+                }
+            }
+        }
     }
 
     &-image {
-        @include adaptive-value('width', 470, 300, 1);
-        @include adaptive-value('height', 410, 261, 1);
+        @include adaptive-value('width', 470, 250, 1);
+        @include adaptive-value('height', 410, 220, 1);
+        overflow: hidden;
+        z-index: 11;
+
+        @include media(425) {
+            width: 300px;
+            height: 261px;
+            object-fit: cover;
+        }
     }
 }
 
@@ -70,19 +102,29 @@
 
     &-border {
         position: absolute;
-        top: -18px;
-        bottom: 0;
-        left: -5px;
+        top: 0px;
         right: 0;
+        bottom: 10px;
+        left: 0px;
         background-color: transparent;
         border: 1px solid $primary-color;
         border-radius: $border-radius;
-        transform: matrix(1, -0.09, 0.09, 1, 0, 0);
+        transform: rotate(-4.93deg);
         transition: all 0.2s ease;
         z-index: 9;
 
-        @include media(756) {
-            top: -4px;
+        @include mobile {
+            top: 15px;
+            right: 15px;
+            bottom: 15px;
+            left: 15px;
+            transform: rotate(-8deg);
+        }
+
+        @include media(425) {
+            top: 0;
+            right: 0;
+            bottom: 0;
             left: 0;
         }
     }

@@ -1,0 +1,140 @@
+.about {
+    @include flex(center, center);
+    @include adaptive-value('margin-block', 50, 20, 1);
+    @include adaptive-value('column-gap', 110, 50, 1);
+
+    #about-us {
+        scroll-margin-top: $header-height + 25;
+    }
+
+    @include tablet {
+        flex-direction: column;
+        @include adaptive-value('row-gap', 70, 50, 1);
+    }
+
+    &__left,
+    &__right {
+        width: 50%;
+
+        @include tablet {
+            width: 100%;
+        }
+    }
+
+    &__left {
+        margin: 0 auto;
+        position: relative;
+        @include center();
+    }
+
+    .title {
+        @include adaptive-value('margin-bottom', 55, 32, 1);
+
+        @include mobile {
+            margin-bottom: 32px;
+        }
+    }
+
+    &__desc {
+        @include font(16, 14, 500, 19px);
+        color: #706c6c;
+
+        @include mobile {
+            font-size: $font-size-14;
+            line-height: 17px;
+        }
+
+        &-item:not(:last-child) {
+            @include adaptive-value('margin-bottom', 22, 26, 1);
+        }
+    }
+
+    &__links {
+        width: 100%;
+        @include flex(center, flex-end);
+        @include adaptive-value('margin-top', 55, 32, 1);
+        @include font(16, 12, 500, 19px);
+        color: $primary-color;
+
+        @include mobile {
+            margin-top: 32px;
+            line-height: 17px;
+        }
+
+        a {
+            @include flex(center, space-between);
+
+            @include media-desktop(1024) {
+                position: relative;
+                padding: 0 40px 0 0;
+
+                &:hover {
+                    span {
+                        right: 0;
+                    }
+                }
+
+                span {
+                    transition: all 0.2s ease 0.1s;
+                    position: absolute;
+                    right: 10px;
+                    @include center();
+                }
+            }
+        }
+    }
+
+    &-image {
+        width: 100%;
+        height: 100%;
+        border-radius: $border-radius;
+        overflow: hidden;
+        z-index: 10;
+        object-fit: cover;
+
+        &-wrap {
+            @include center();
+            @include adaptive-value('width', 475, 278, 1);
+            @include adaptive-value('height', 490, 266, 1);
+            position: relative;
+
+            &:hover {
+                .about-video-border {
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    transform: rotate(0);
+                }
+            }
+        }
+    }
+
+    &-video-border {
+        position: absolute;
+        top: 10px;
+        bottom: -21px;
+        left: -16px;
+        right: -19px;
+        background-color: transparent;
+        border: 1px solid $primary-color;
+        border-radius: $border-radius;
+        transform: rotate(5.88deg);
+        transition: all 0.2s ease;
+        z-index: 9;
+
+        @include media(450) {
+            top: 5px;
+            bottom: -5px;
+            left: -5px;
+            right: -7px;
+        }
+
+        @include mobile {
+            top: 3px;
+            bottom: -12px;
+            left: -4px;
+            right: -9px;
+        }
+    }
+}
