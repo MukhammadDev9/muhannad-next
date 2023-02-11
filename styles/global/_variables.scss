@@ -21,7 +21,8 @@ $font-size-36: 36px;
 $header-height: 91px;
 $border-radius: 20px;
 
-$mobile-width: 375px;
+$mobile-width: 768px;
+$tablet-width: 1024px;
 
 %transition {
     transition: all 0.4s ease;

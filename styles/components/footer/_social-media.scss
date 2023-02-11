@@ -1,6 +1,13 @@
 .media__list {
     @include flex(center, flex-start);
-    margin-bottom: 26px;
+
+    @include media-desktop(768) {
+        margin-bottom: 26px;
+    }
+
+    @include mobile {
+        margin-top: 60px;
+    }
 
     &-item {
         margin-right: 36px;

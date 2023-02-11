@@ -1,9 +1,14 @@
 .nav {
     &__list {
-        display: flex;
-        align-items: center;
+        @include flex(center, space-between);
         flex-wrap: wrap;
-        @include adaptive-value('gap', 48, 1, 1);
+        @include adaptive-value('gap', 48, 18, 1);
+
+        @include mobile {
+            @include flex(flex-start);
+            flex-direction: column;
+            margin-bottom: 58px;
+        }
     }
 
     &__item {

@@ -1,0 +1,32 @@
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(100%, 0);
+    background: rgba(74, 74, 74, 0.5);
+    transition: all 0.3s ease-out 0s;
+    opacity: 0;
+    overflow: auto;
+
+    &.show {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    &-wrap {
+        display: inline;
+        float: right;
+        width: 70vw;
+        height: 100%;
+        background-color: $white-color;
+        padding: 32px 18px;
+    }
+
+    &__close {
+        width: 100%;
+        @include flex(center, flex-end);
+        margin-bottom: 58px;
+    }
+}

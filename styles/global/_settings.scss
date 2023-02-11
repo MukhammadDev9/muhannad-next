@@ -27,7 +27,7 @@
     font-family: $inter;
     color: $white-color;
     transition: all 0.4s ease;
-    @include font($font-size-18, $font-size-14, 700, 22px);
+    @include font(18, 14, 700, 22px);
     @include adaptive-value('line-height', 22, 17, 1);
     @include adaptive-value('padding-block', 15, 10, 1);
     @include adaptive-value('padding-inline', 40, 20, 1);
@@ -48,6 +48,15 @@
     font-size: $font-size-16;
     font-weight: 700;
     line-height: 19px;
-    padding: 10px 30px !important;
+    @include adaptive-value('padding-block', 10, 8, 1);
+    @include adaptive-value('padding-inline', 30, 10, 1);
     border-radius: $border-radius;
+
+    @include mobile {
+        padding: 8px 10px;
+
+        span {
+            @include center();
+        }
+    }
 }

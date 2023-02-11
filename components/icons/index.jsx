@@ -1,4 +1,4 @@
 import CallIcon from './components/CallIcon';
-import MenuBurger from './components/MenuBurger';
+import BurgerIcon from './components/BurgerIcon';
 
-export { CallIcon, MenuBurger };
+export { CallIcon, BurgerIcon };

@@ -8,8 +8,6 @@
     }
 
     &-link {
-        font-size: $font-size-16;
-        font-style: normal;
-        line-height: 19px;
+        @include font(16, 14, 400, 19px);
     }
 }

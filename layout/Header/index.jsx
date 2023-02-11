@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Logo from '@/components/Atoms/Logo';
 import Nav from './components/Nav';
 import CallLink from '@/components/Atoms/CallLink';
 import { BiPhoneCall } from 'react-icons/bi';
 import { useIsMobile } from '@/hooks/useIsMobile';
-import { MenuBurger } from '@/components/icons';
+import { BurgerIcon } from '@/components/icons';
+import BurgerMenu from '@/components/BurgerMenu';
 
 const Header = () => {
+    const [show, setShow] = useState(false);
     const isMobile = useIsMobile();
 
-    console.log(isMobile);
+    useEffect(() => {
+        if (show) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [show]);
 
     return (
         <header className="header">
@@ -18,7 +26,9 @@ const Header = () => {
                     <Logo />
                     <div className="header__menu">{!isMobile && <Nav />}</div>
                     {isMobile ? (
-                        <MenuBurger />
+                        <span onClick={() => setShow(true)}>
+                            <BurgerIcon />
+                        </span>
                     ) : (
                         <button className="btn btn-call">
                             <span className="call-wrapper">
@@ -27,6 +37,7 @@ const Header = () => {
                             </span>
                         </button>
                     )}
+                    <BurgerMenu show={show} setShow={setShow} />
                 </div>
             </div>
         </header>

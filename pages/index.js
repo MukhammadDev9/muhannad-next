@@ -1,6 +1,5 @@
 import { Page } from '@/layout';
 
-import Footer from '@/components/Footer';
 import Banner from '@/components/Banner';
 
 export default function Home() {
@@ -9,7 +8,6 @@ export default function Home() {
             <div className="container">
                 <Banner />
             </div>
-            <Footer />
         </Page>
     );
 }

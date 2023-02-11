@@ -1,43 +1,94 @@
 .footer {
     background-color: $primary-color;
     color: $white-color;
-    padding: 70px 0 87px 0;
+    @include adaptive-value('padding-block', 64, 24, 1);
 
-    &__container {
-        @include flex(flex-start, space-between);
-
-        flex-wrap: wrap;
+    @include mobile {
+        padding: 24px 0 48px 0;
     }
 
-    &__list {
-        font-size: $font-size-16;
-        font-weight: 400;
-        line-height: 19px;
+    &__wrap {
+        @include flex(flex-start, space-between);
+        @include adaptive-value('column-gap', 100, 20, 1);
+    }
 
-        &-item:not(:last-child) {
-            margin-bottom: 44px;
+    &__left {
+        @include flex(flex-start, space-between);
+        @include adaptive-value('column-gap', 150, 20, 1);
+
+        @include media(475) {
+            flex-direction: column;
+            row-gap: 20px;
         }
     }
 
-    &__content {
-        height: 100%;
-        line-height: 140%;
-
-        &-item {
-            max-width: 320px;
-            &:not(:last-child) {
-                margin-bottom: 18px;
+    &__right {
+        @include tablet {
+            span {
+                display: block;
+                line-height: 25px;
             }
         }
     }
 
+    @include tablet {
+        &__left,
+        &__right {
+            width: 40%;
+        }
+    }
+
+    @include mobile {
+        &__left,
+        &__right {
+            width: 45%;
+        }
+    }
+
+    &__list {
+        @include font(16, 14, 400, 19px);
+
+        &-item:not(:last-child) {
+            @include adaptive-value('margin-bottom', 44, 26, 1);
+        }
+    }
+
     &__call-link {
+        @include font(16, 14, 400, 19px);
         margin-bottom: 16px;
-        font-weight: 400 !important;
+
+        @include media(475) {
+            line-height: 25px;
+            font-size: $font-size-14;
+        }
     }
 
     &__address {
+        @include font(16, 14, 400, 19px);
         max-width: 315px;
-        line-height: 19px;
+
+        @include media(475) {
+            font-size: $font-size-14;
+            line-height: 17px;
+        }
+    }
+
+    &__leader {
+        max-width: 320px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+
+        span {
+            display: block;
+        }
+
+        @include media(1024) {
+            display: none;
+        }
     }
 }

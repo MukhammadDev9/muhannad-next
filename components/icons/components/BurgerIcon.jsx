@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const MenuBurger = (props) => (
+const BurgerIcon = (props) => (
     <svg
         width={32}
         height={32}
@@ -17,4 +17,4 @@ const MenuBurger = (props) => (
     </svg>
 );
 
-export default MenuBurger;
+export default BurgerIcon;
