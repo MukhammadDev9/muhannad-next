@@ -1,0 +1,56 @@
+.staffing__info {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: rgba(81, 81, 81, 0.5);
+    width: 100%;
+    height: 100%;
+    @include center();
+    transition: all 0.4s ease;
+    visibility: hidden;
+    opacity: 0;
+
+    &.show {
+        visibility: visible;
+        opacity: 1;
+
+        .staffing__image-wrap {
+            transform: scale(1);
+
+            @include mobile {
+                transform: scale(0.7);
+            }
+        }
+    }
+
+    span {
+        position: absolute;
+        top: 16px;
+        right: 12px;
+        cursor: pointer;
+    }
+}
+
+.staffing__image {
+    @include adaptive-value('width', 925, 330, 1);
+    @include adaptive-value('height', 600, 220, 1);
+    object-fit: contain;
+    @include mobile {
+        object-fit: cover;
+    }
+
+    &-wrap {
+        transform: scale(0);
+        border-radius: 10px;
+        background: $white-color;
+
+        padding: 17px 58px;
+        @include adaptive-value('padding-block', 17, 5, 1);
+        @include adaptive-value('padding-inline', 58, 28, 1);
+        @include mobile {
+            padding-top: 20px;
+        }
+    }
+}

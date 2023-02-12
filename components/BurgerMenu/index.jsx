@@ -1,7 +1,7 @@
 import { useIsMobile } from '@/hooks/useIsMobile';
 import { useKeyPress } from '@/hooks/useKeyPress';
 import Nav from '@/layout/Header/components/Nav';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { BiPhoneCall } from 'react-icons/bi';
 import { GrFormClose } from 'react-icons/gr';
 import CallLink from '../Atoms/CallLink';
@@ -9,9 +9,20 @@ import CallLink from '../Atoms/CallLink';
 const BurgerMenu = ({ show, setShow }) => {
     const isMobile = useIsMobile(1024);
     const escape = useKeyPress('Escape');
+    const menuRef = useRef();
 
     useEffect(() => {
-        if (!isMobile) {
+        const handler = (e) => {
+            if (!menuRef?.current?.contains(e.target)) {
+                setShow(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handler);
+    });
+
+    useEffect(() => {
+        if (isMobile) {
             setShow(false);
         } else {
             setShow(true);
@@ -26,12 +37,15 @@ const BurgerMenu = ({ show, setShow }) => {
 
     return (
         <div className={`menu ${show && 'show'}`}>
-            <div className="menu-wrap">
+            <div className="menu-wrap" ref={menuRef}>
                 <div className="menu__close">
-                    <GrFormClose size={34} onClick={() => setShow(false)} />
+                    <GrFormClose
+                        className="menu-icon"
+                        size={34}
+                        onClick={() => setShow(false)}
+                    />
                 </div>
-                <Nav />
-
+                <Nav setShow={setShow} />
                 <button className="btn btn-call">
                     <span>
                         <BiPhoneCall size={24} className="call-icon" />

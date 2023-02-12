@@ -11,6 +11,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     visibility: hidden;
+    z-index: 999;
 
     &.show {
         opacity: 1;
@@ -27,10 +28,11 @@
         width: 70vw;
         height: 100%;
         background-color: $white-color;
-        padding: 32px 18px;
+        padding-block: 32px;
         overflow: auto;
         transform: translate(100%, 0);
         transition: all 0.3s ease-in-out;
+        @include adaptive-value('padding-inline', 50, 18, 1);
     }
 
     &__close {

@@ -7,6 +7,11 @@
 body {
     font-family: $inter !important;
     font-size: $font-size-16;
+
+    &.scroll-hidden {
+        overflow: hidden;
+        padding-right: 16px;
+    }
 }
 
 ul li {

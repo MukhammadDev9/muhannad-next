@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import AboutImage from '@/assets/images/About-us.png';
 import Link from 'next/link';
 import ArrowRight from '@/components/icons/components/ArrowRight';
 import { useIsMobile } from '@/hooks/useIsMobile';
+import ArrowDown from '../icons/components/ArrowDown';
+import StaffingModal from '../Modals/StaffingModal';
 
 const AboutUs = () => {
     const isMobile = useIsMobile();
+    const [show, setShow] = useState(false);
 
     return (
-        <div className="about">
+        <section className="about">
             <div className="about__left">
                 <div className="about-image-wrap">
                     <div className="about-video-border" />
@@ -68,18 +71,29 @@ const AboutUs = () => {
 
                 <div className="about__links">
                     <div className="about__links-item">
-                        <Link href="/about-us">
+                        <a onClick={() => setShow(true)}>
                             Сведения о кадровом составе
                             {!isMobile && (
                                 <span>
                                     <ArrowRight />
                                 </span>
                             )}
-                        </Link>
+                        </a>
                     </div>
+                    {isMobile && (
+                        <div className="about__links-item">
+                            <a className="more-details">
+                                Подробнее
+                                <span>
+                                    <ArrowDown />
+                                </span>
+                            </a>
+                        </div>
+                    )}
                 </div>
             </div>
-        </div>
+            <StaffingModal show={show} setShow={setShow} />
+        </section>
     );
 };
 

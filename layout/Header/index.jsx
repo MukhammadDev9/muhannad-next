@@ -13,9 +13,9 @@ const Header = () => {
 
     useEffect(() => {
         if (show) {
-            document.body.style.overflow = 'hidden';
+            document.body.classList.add('scroll-hidden');
         } else {
-            document.body.style.overflow = 'auto';
+            document.body.classList.remove('scroll-hidden');
         }
     }, [show]);
 
@@ -27,7 +27,7 @@ const Header = () => {
                     <div className="header__menu">{!isMobile && <Nav />}</div>
                     {isMobile ? (
                         <span onClick={() => setShow(true)}>
-                            <BurgerIcon />
+                            <BurgerIcon className="menu-icon" />
                         </span>
                     ) : (
                         <button className="btn btn-call">

@@ -17,7 +17,7 @@
         list-style: 19px;
         color: $dark-grey-color;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: all 0.3s;
 
         @include media-desktop(768) {
             &:hover {

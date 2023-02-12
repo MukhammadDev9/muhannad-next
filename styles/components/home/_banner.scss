@@ -3,7 +3,10 @@
     column-gap: 52px;
     @include adaptive-value('padding-top', 100, 62, 1);
     @include adaptive-value('margin-bottom', 130, 26, 1);
-    scroll-margin-top: $header-height + 25;
+
+    @include mobile {
+        margin-top: $header-height - 30;
+    }
 
     @include media(768) {
         @include adaptive-value('row-gap', 50, 35, 1);
@@ -71,10 +74,10 @@
                 transform: rotate(0);
 
                 @include mobile {
-                    top: 22px;
-                    right: 20px;
-                    bottom: 22px;
-                    left: 20px;
+                    top: 25px;
+                    right: 25px;
+                    bottom: 25px;
+                    left: 25px;
                 }
             }
         }

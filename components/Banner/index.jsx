@@ -4,7 +4,7 @@ import BannerImage from '@/assets/images/Banner.png';
 
 const Banner = () => {
     return (
-        <section id="banner" className="banner">
+        <section className="banner">
             <div className="banner__left">
                 <p className="banner__subtitle">
                     Орган по сертификации продукции
@@ -17,7 +17,7 @@ const Banner = () => {
                 </p>
                 <button className="btn">Написать нам письмо</button>
             </div>
-            <div className="banner__right">
+            <div id="banner" className="banner__right">
                 <div className="banner-video">
                     <div className="banner-video-border" />
                     <Image
