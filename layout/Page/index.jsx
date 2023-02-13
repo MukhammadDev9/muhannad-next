@@ -10,7 +10,7 @@ const Page = ({ children }) => {
 
             <Header />
             <main className="page">{children}</main>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };

@@ -40,7 +40,7 @@ const BurgerMenu = ({ show, setShow }) => {
             <div className="menu-wrap" ref={menuRef}>
                 <div className="menu__close">
                     <GrFormClose
-                        className="menu-icon"
+                        className="icon"
                         size={34}
                         onClick={() => setShow(false)}
                     />

@@ -1,23 +1,26 @@
+import React, { useState } from 'react';
 import ArrowDown from '@/components/icons/components/ArrowDown';
-import { useIsMobile } from '@/hooks/useIsMobile';
-import React from 'react';
 
-const AccordionItem = ({ title, subTitle, list }) => {
-    const isMobile = useIsMobile(425);
+const AccordionItem = ({ children, title, subTitle, list }) => {
+    const [select, setSelect] = useState(false);
     return (
-        <div className="accordion__item">
-            <h3 className="title">
+        <div className={`accordion__item ${select && 'active'}`}>
+            <h3 className="title" onClick={() => setSelect(!select)}>
                 <span>{title}</span>
-                <ArrowDown color="#000" />
+                <span className={`icon ${select && 'active'}`}>
+                    <ArrowDown color="#000" />
+                </span>
             </h3>
-            <div className="accordion__item-content">
-                <div className="sub-title">{subTitle}</div>
-                <ul className="accordion__item-list">
-                    {list.map((item, i) => (
-                        <li key={i}>{item}</li>
-                    ))}
-                </ul>
-            </div>
+            {select && (
+                <div className="accordion__item-content">
+                    {subTitle && <div className="sub-title">{subTitle}</div>}
+                    <ul className="accordion__item-list">
+                        {list.map((item, i) => (
+                            <li key={i}>{item}</li>
+                        ))}
+                    </ul>
+                </div>
+            )}
         </div>
     );
 };

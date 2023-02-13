@@ -1,33 +1,39 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 
 const Nav = ({ setShow }) => {
     const handle = () => {
-        setShow(false);
+        if (setShow != undefined) return setShow(false);
     };
+
+    const data = [
+        {
+            title: 'Главная',
+            link: '#',
+        },
+        {
+            title: 'О нас',
+            link: '#about-us',
+        },
+        {
+            title: 'Наши услуги',
+            link: '#services',
+        },
+        {
+            title: 'Контакты',
+            link: '#contacts',
+        },
+    ];
 
     return (
         <nav className="nav">
             <ul className="nav__list">
-                <li className="nav__item">
-                    <a href="#banner" onClick={() => handle()}>
-                        Главная
-                    </a>
-                </li>
-                <li className="nav__item">
-                    <a href="#about-us" onClick={() => handle()}>
-                        О нас
-                    </a>
-                </li>
-                <li className="nav__item">
-                    <a href="#" onClick={() => handle()}>
-                        Наши услуги
-                    </a>
-                </li>
-                <li className="nav__item">
-                    <a href="#" onClick={() => handle()}>
-                        Контакты
-                    </a>
-                </li>
+                {data.map((item, i) => (
+                    <li className="nav__item" key={i}>
+                        <a href={item.link} onClick={handle}>
+                            {item.title}
+                        </a>
+                    </li>
+                ))}
             </ul>
         </nav>
     );

@@ -24,53 +24,68 @@
     }
 }
 
-.btn {
+.btn,
+.btn-call {
     background-color: $primary-color;
     border: 1px solid $primary-color;
     font-family: $inter;
     color: $white-color;
-    transition: all 0.4s ease;
+    @extend %transition;
+}
+
+.btn {
     @include font(18, 14, 700, 22px);
     @include adaptive-value('line-height', 22, 17, 1);
     @include adaptive-value('padding-block', 15, 10, 1);
     @include adaptive-value('padding-inline', 40, 20, 1);
 
-    &:focus {
-        background: $white-color;
-        color: $primary-color;
-    }
-
-    @include media-desktop(1024) {
+    @include media-desktop(768) {
         &:hover {
             background: $white-color;
             color: $primary-color;
         }
     }
 }
+
 .btn-call {
-    font-size: $font-size-16;
-    font-weight: 700;
-    line-height: 19px;
     @include adaptive-value('padding-block', 10, 8, 1);
     @include adaptive-value('padding-inline', 30, 10, 1);
     border-radius: $border-radius;
 
-    @include tablet {
-        padding: 8px 10px;
+    a {
+        @include font(16, 14, 700, 19px);
+    }
 
-        span {
-            @include center();
+    span {
+        @include center();
+    }
+
+    @include media(768) {
+        padding: 8px 10px;
+    }
+
+    @include media-desktop(768) {
+        &:hover {
+            background: $white-color;
+            color: $primary-color;
         }
     }
 }
 
-.menu-icon {
+.icon {
     cursor: pointer;
 }
 
 @include mobile {
     #banner,
     #about-us {
-        scroll-margin-top: $header-height + 25px;
+        scroll-margin-top: $header-height + 25;
+    }
+}
+
+@include media-desktop(768) {
+    #banner,
+    #about-us {
+        scroll-margin-top: 25px;
     }
 }

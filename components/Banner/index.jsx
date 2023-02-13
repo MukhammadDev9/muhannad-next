@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect } from 'react';
 import BannerImage from '@/assets/images/Banner.png';
 
 const Banner = () => {
@@ -19,7 +19,7 @@ const Banner = () => {
             </div>
             <div id="banner" className="banner__right">
                 <div className="banner-video">
-                    <div className="banner-video-border" />
+                    <div className="banner-image-border" />
                     <Image
                         className="banner-image"
                         src={BannerImage}

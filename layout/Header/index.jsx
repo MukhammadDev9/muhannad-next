@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Logo from '@/components/Atoms/Logo';
 import Nav from './components/Nav';
 import CallLink from '@/components/Atoms/CallLink';
@@ -9,33 +9,32 @@ import BurgerMenu from '@/components/BurgerMenu';
 
 const Header = () => {
     const [show, setShow] = useState(false);
-    const isMobile = useIsMobile(756);
-
-    useEffect(() => {
-        if (show) {
-            document.body.classList.add('scroll-hidden');
-        } else {
-            document.body.classList.remove('scroll-hidden');
-        }
-    }, [show]);
+    const isMobile = useIsMobile(768);
 
     return (
         <header className="header">
             <div className="container">
                 <div className="header__container">
                     <Logo />
-                    <div className="header__menu">{!isMobile && <Nav />}</div>
-                    {isMobile ? (
-                        <span onClick={() => setShow(true)}>
-                            <BurgerIcon className="menu-icon" />
-                        </span>
-                    ) : (
-                        <button className="btn btn-call">
-                            <span className="call-wrapper">
+
+                    {!isMobile && (
+                        <>
+                            <div className="header__menu">
+                                <Nav />
+                            </div>
+                            <a
+                                href="tel:+998622256999"
+                                className="btn-call call-wrap">
                                 <BiPhoneCall size={24} className="call-icon" />
-                                <CallLink />
-                            </span>
-                        </button>
+                                <CallLink callLink={'tel:+998622256999'} />
+                            </a>
+                        </>
+                    )}
+
+                    {isMobile && (
+                        <span onClick={() => setShow(true)}>
+                            <BurgerIcon className="icon" />
+                        </span>
                     )}
                     <BurgerMenu show={show} setShow={setShow} />
                 </div>

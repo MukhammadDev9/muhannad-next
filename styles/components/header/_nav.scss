@@ -1,23 +1,23 @@
 .nav {
     &__list {
         @include flex(center, space-between);
-        flex-wrap: wrap;
         @include adaptive-value('gap', 48, 18, 1);
+        flex-wrap: wrap;
 
-        @include media(755) {
-            @include flex(flex-start);
+        @include mobile {
+            align-items: flex-start;
             flex-direction: column;
             margin-bottom: 58px;
         }
     }
 
     &__item {
-        font-weight: 400;
         font-size: $font-size-16;
+        font-weight: 400;
         list-style: 19px;
         color: $dark-grey-color;
         cursor: pointer;
-        transition: all 0.3s;
+        @extend %transition;
 
         @include media-desktop(768) {
             &:hover {
@@ -25,8 +25,4 @@
             }
         }
     }
-}
-
-.current {
-    color: $primary-color;
 }

@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import AboutImage from '@/assets/images/About-us.png';
-import Link from 'next/link';
 import ArrowRight from '@/components/icons/components/ArrowRight';
 import { useIsMobile } from '@/hooks/useIsMobile';
 import ArrowDown from '../icons/components/ArrowDown';
 import StaffingModal from '../Modals/StaffingModal';
 
 const AboutUs = () => {
-    const isMobile = useIsMobile();
     const [show, setShow] = useState(false);
+    const isMobile = useIsMobile(768);
 
     return (
         <section className="about">
             <div className="about__left">
-                <div className="about-image-wrap">
-                    <div className="about-video-border" />
+                <div className="about-video">
+                    <div className="about-image-border" />
                     <Image
                         className="about-image"
                         src={AboutImage}

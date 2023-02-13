@@ -58,7 +58,7 @@ const Footer = () => {
 
                             <div className="footer__call-link">
                                 <span>Номер телефона: </span>
-                                <CallLink />
+                                <CallLink callLink="tel:+998622256999" />
                             </div>
 
                             <div className="footer__address">

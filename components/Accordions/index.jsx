@@ -1,15 +1,18 @@
-import React from 'react';
+import { useIsMobile } from '@/hooks/useIsMobile';
+import React, { useState } from 'react';
 import AccordionItem from './Accordion-Item';
 
 const Accordions = () => {
+    const isMobile = useIsMobile(425);
+
     return (
         <div className="accordion-wrap">
-            {data?.map((item, i) => (
+            {data.map((item, i) => (
                 <AccordionItem
-                    key={i}
                     title={item.title}
                     subTitle={item.subTitle}
                     list={item.list}
+                    key={i}
                 />
             ))}
         </div>
@@ -61,7 +64,7 @@ const data = [
     },
     {
         title: 'Права и обязанности заказчика',
-        subTitle: '',
+        subTitle: false,
         list: [
             'Выплатить ООО «MUHANNAD SINOV SERVIS» единовременный разовый платѐж в соответствии с Соглашением на применение сертификата и использования знака соответствия',
             'Сертифицированную серийно производимую продукцию маркировать знаком соответствия под собственной ответственностью; ',
@@ -74,7 +77,7 @@ const data = [
     },
     {
         title: 'Порядок подачи и рассмотрения апелляций на услуги по сертификации и испытаниям',
-        subTitle: '',
+        subTitle: false,
         list: [
             'аккредитованными органами по сертификации;',
             'аккредитованными органами по сертификации;',

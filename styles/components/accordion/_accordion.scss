@@ -16,15 +16,23 @@
 .accordion__item {
     border: 1px solid #e8e8e8;
     border-radius: 12px;
-    @include adaptive-value('padding-block', 20, 10, 1);
-    @include adaptive-value('padding-inline', 40, 10, 1);
-    cursor: pointer;
+    overflow: hidden;
+
+    &.active {
+        .accordion__item-content {
+            height: 100%;
+            display: block;
+        }
+    }
 
     h3.title {
+        @include adaptive-value('padding-block', 20, 10, 1);
+        @include adaptive-value('padding-inline', 40, 10, 1);
         @include flex(center, space-between);
         @include font(16, 12, 600, 19px);
         color: $grey-color;
         column-gap: 20px;
+        cursor: pointer;
 
         @include media(425) {
             font-size: $font-size-12;
@@ -33,6 +41,30 @@
 
         span {
             width: 95%;
+        }
+
+        .icon {
+            width: 16px;
+            @extend %transition;
+            &.active {
+                transform: rotate(275deg);
+            }
+        }
+    }
+
+    .sub-title {
+        margin-top: 26px;
+    }
+
+    &-list {
+        margin-top: 16px;
+
+        li {
+            list-style: inside;
+
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
         }
     }
 
@@ -45,7 +77,11 @@
     }
 
     &-content {
+        @include adaptive-value('padding-inline', 40, 10, 1);
+        @include adaptive-value('padding-bottom', 30, 10, 1);
         @include font(16, 12, 500, 19px);
+        height: 0;
+        display: none;
 
         @include media(425) {
             line-height: 15px;
