@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import AboutImage from '@/assets/images/About-us.png';
-import ArrowRight from '@/components/icons/components/ArrowRight';
 import { useIsMobile } from '@/hooks/useIsMobile';
-import ArrowDown from '../icons/components/ArrowDown';
-import StaffingModal from '../Modals/StaffingModal';
+import StaffingModal from '@/components/Modals/StaffingModal';
+import { ArrowRight, ArrowDown } from '@/components/icons';
+import AboutImage from '@/assets/images/About-us.png';
 
 const AboutUs = () => {
     const [show, setShow] = useState(false);

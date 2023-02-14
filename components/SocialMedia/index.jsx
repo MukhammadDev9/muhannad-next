@@ -3,20 +3,20 @@ import { BsFacebook, BsInstagram, BsTelegram } from 'react-icons/bs';
 
 const SocialMedia = () => {
     return (
-        <ul className="media__list">
-            <li className="media__list-item">
+        <ul className="footer-socialmedia">
+            <li className="footer-socialmedia__item">
                 <a href="#">
-                    <BsTelegram size={24} className="media__icon" />
+                    <BsTelegram size={24} className="icon" />
                 </a>
             </li>
-            <li className="media__list-item">
+            <li className="footer-socialmedia__item">
                 <a href="#">
-                    <BsFacebook size={24} className="media__icon" />
+                    <BsFacebook size={24} className="icon" />
                 </a>
             </li>
-            <li className="media__list-item">
+            <li className="footer-socialmedia__item">
                 <a href="#">
-                    <BsInstagram size={24} className="media__icon" />
+                    <BsInstagram size={24} className="icon" />
                 </a>
             </li>
         </ul>

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import ArrowDown from '@/components/icons/components/ArrowDown';
+import { ArrowDown } from '@/components/icons';
 
-const AccordionItem = ({ children, title, subTitle, list }) => {
+const AccordionItem = ({ title, subTitle, list }) => {
     const [select, setSelect] = useState(false);
+
     return (
         <div className={`accordion__item ${select && 'active'}`}>
             <h3 className="title" onClick={() => setSelect(!select)}>

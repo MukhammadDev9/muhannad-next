@@ -1,9 +1,9 @@
 import React from 'react';
 
-const CallLink = ({ callLink = 'tel:+998622256999' }) => {
+const CallLink = ({ children, callLink }) => {
     return (
-        <a className="call-link" href={callLink}>
-            +998 62 225 69 99
+        <a className="call__link" href={callLink}>
+            {children}
         </a>
     );
 };

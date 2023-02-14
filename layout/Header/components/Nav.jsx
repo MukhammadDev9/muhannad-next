@@ -1,33 +1,15 @@
 import React from 'react';
+import { menu_list } from '@/utils/data';
 
 const Nav = ({ setShow }) => {
     const handle = () => {
         if (setShow != undefined) return setShow(false);
     };
 
-    const data = [
-        {
-            title: 'Главная',
-            link: '#',
-        },
-        {
-            title: 'О нас',
-            link: '#about-us',
-        },
-        {
-            title: 'Наши услуги',
-            link: '#services',
-        },
-        {
-            title: 'Контакты',
-            link: '#contacts',
-        },
-    ];
-
     return (
         <nav className="nav">
             <ul className="nav__list">
-                {data.map((item, i) => (
+                {menu_list.map((item, i) => (
                     <li className="nav__item" key={i}>
                         <a href={item.link} onClick={handle}>
                             {item.title}

@@ -21,6 +21,8 @@ const BurgerMenu = ({ show, setShow }) => {
         document.addEventListener('mousedown', handler);
     });
 
+    
+
     useEffect(() => {
         if (isMobile) {
             setShow(false);
@@ -49,7 +51,9 @@ const BurgerMenu = ({ show, setShow }) => {
                 <button className="btn btn-call">
                     <span>
                         <BiPhoneCall size={24} className="call-icon" />
-                        <CallLink />
+                        <CallLink callLink={'tel:+998622256999'}>
+                            +998 62 225 69 99
+                        </CallLink>
                     </span>
                 </button>
             </div>

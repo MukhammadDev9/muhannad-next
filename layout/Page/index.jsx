@@ -1,7 +1,7 @@
 import React from 'react';
-import Footer from '../Footer';
 import Head from '../Head';
 import Header from '../Header';
+import Footer from '../Footer';
 
 const Page = ({ children }) => {
     return (
@@ -10,7 +10,7 @@ const Page = ({ children }) => {
 
             <Header />
             <main className="page">{children}</main>
-            {/* <Footer /> */}
+            <Footer />
         </div>
     );
 };

@@ -1,9 +1,7 @@
 .call {
-    &-wrap {
-        @include flex(center, space-between);
-    }
+    @include flex(center, space-between);
 
-    &-icon {
+    &__icon {
         margin-right: 20px;
 
         @include mobile {
@@ -11,7 +9,7 @@
         }
     }
 
-    &-link {
+    &__link {
         @include font(16, 14, 400, 19px);
     }
 }
