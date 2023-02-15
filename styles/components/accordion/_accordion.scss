@@ -84,13 +84,10 @@
 
     &__item {
         list-style: outside;
+        margin-bottom: 1rem;
 
         &::marker {
             color: #000;
-        }
-
-        &:not(:last-child) {
-            margin-bottom: 1rem;
         }
     }
 }
