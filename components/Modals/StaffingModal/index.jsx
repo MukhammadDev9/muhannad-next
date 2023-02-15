@@ -1,8 +1,8 @@
-import Image from 'next/image';
 import React, { useEffect } from 'react';
-import StaffingImage from '@/assets/images/Staffing-info.png';
 import { GrClose } from 'react-icons/gr';
+import Image from 'next/image';
 import { useKeyPress } from '@/hooks/useKeyPress';
+import StaffingImage from '@/assets/images/Staffing-info.png';
 
 const StaffingModal = ({ show, setShow }) => {
     const escape = useKeyPress('Escape');
@@ -22,16 +22,14 @@ const StaffingModal = ({ show, setShow }) => {
     }, [show]);
 
     return (
-        <div
-            id="staffing__modal"
-            className={`staffing__info  ${show && 'show'}`}>
-            <div className="staffing__image-wrap">
+        <div className={`staffing  ${show && 'show'}`}>
+            <div className="staffing__wrap">
                 <Image
                     className="staffing__image"
                     src={StaffingImage}
                     alt={StaffingImage}
                 />
-                <span>
+                <span className="staffing__icon">
                     <GrClose size={18} onClick={() => setShow(false)} />
                 </span>
             </div>

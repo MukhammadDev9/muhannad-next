@@ -1,4 +1,4 @@
-.staffing__info {
+.staffing {
     @include center();
     @extend %transition;
     position: fixed;
@@ -16,7 +16,7 @@
         visibility: visible;
         opacity: 1;
 
-        .staffing__image-wrap {
+        .staffing__wrap {
             transform: scale(1);
 
             @include mobile {
@@ -25,23 +25,7 @@
         }
     }
 
-    span {
-        position: absolute;
-        top: 16px;
-        right: 12px;
-        cursor: pointer;
-    }
-}
-
-.staffing__image {
-    @include adaptive-value('width', 925, 330, 1);
-    @include adaptive-value('height', 600, 220, 1);
-    object-fit: contain;
-    @include mobile {
-        object-fit: cover;
-    }
-
-    &-wrap {
+    &__wrap {
         transform: scale(0);
         border-radius: 10px;
         background: $white-color;
@@ -51,6 +35,21 @@
         @include adaptive-value('padding-inline', 58, 28, 1);
         @include mobile {
             padding-top: 20px;
+        }
+    }
+    .staffing__icon {
+        position: absolute;
+        top: 16px;
+        right: 12px;
+        cursor: pointer;
+    }
+
+    &__image {
+        @include adaptive-value('width', 925, 330, 1);
+        @include adaptive-value('height', 600, 220, 1);
+        object-fit: contain;
+        @include mobile {
+            object-fit: cover;
         }
     }
 }

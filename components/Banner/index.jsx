@@ -18,10 +18,10 @@ const Banner = () => {
                 <button className="btn">Написать нам письмо</button>
             </div>
             <div id="banner" className="banner__right">
-                <div className="banner-video">
-                    <div className="banner-image-border" />
+                <div className="video">
+                    <div className="video__border" />
                     <Image
-                        className="banner-image"
+                        className="video__image"
                         src={BannerImage}
                         alt="banner-image"
                     />

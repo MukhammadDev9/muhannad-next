@@ -1,137 +1,105 @@
 .about {
-    @include flex(center, center);
     @include adaptive-value('margin-block', 50, 20, 1);
-    @include adaptive-value('column-gap', 110, 50, 1);
 
-    @include tablet {
-        flex-direction: column;
-        @include adaptive-value('row-gap', 70, 50, 1);
+    &__container {
+        @include flex(center, space-between);
+        @include adaptive-value('margin-bottom', 55, 32, 1);
+        @include adaptive-value('column-gap', 100, 50, 1);
+        @include mobile {
+            flex-direction: column;
+            @include adaptive-value('row-gap', 70, 50, 1);
+        }
     }
 
     &__left,
     &__right {
         width: 50%;
 
-        @include tablet {
+        @include mobile {
             width: 100%;
         }
     }
 
     &__left {
         margin: 0 auto;
+        @include flex();
+    }
+
+    &__title {
+        @include adaptive-value('margin-bottom', 55, 30, 1);
+    }
+}
+
+.about-list {
+    display: flex;
+    flex-direction: column;
+    @include adaptive-value('row-gap', 22, 26, 1);
+    transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+    overflow: hidden;
+
+    @include media(1024) {
+        max-height: 375px;
+    }
+
+    @include mobile {
+        max-height: 200px;
+    }
+    @include media(425) {
+        max-height: 310px;
+    }
+
+    @include media(375) {
+        max-height: 460px;
+    }
+
+    &.active {
+        max-height: 9999px;
+        transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+    }
+
+    &__item {
+        @include font(14, 14, 500, 17px);
+        color: $description-color;
+    }
+}
+
+.about-bottom {
+    @include flex(center, flex-end);
+
+    @include media(1024) {
+        justify-content: space-between;
+    }
+
+    &__link {
+        @include flex(center, space-between);
         position: relative;
-        @include center();
-    }
-
-    .title {
-        @include adaptive-value('margin-bottom', 55, 32, 1);
-
-        @include mobile {
-            margin-bottom: 32px;
-        }
-    }
-
-    &__desc {
-        @include font(16, 14, 500, 19px);
-        color: #706c6c;
-
-        @include mobile {
-            font-size: $font-size-14;
-            line-height: 17px;
-        }
-
-        &-item:not(:last-child) {
-            @include adaptive-value('margin-bottom', 22, 26, 1);
-        }
-    }
-
-    &__links {
-        width: 100%;
-        @include flex(center, flex-end);
-        @include adaptive-value('margin-top', 55, 32, 1);
         @include font(16, 12, 500, 19px);
         color: $primary-color;
+        cursor: pointer;
 
-        @include mobile {
-            margin-top: 32px;
-            line-height: 17px;
+        @include media(425) {
+            font-size: $font-size-12;
+            line-height: 15px;
         }
 
-        @include tablet {
-            @include flex(center, space-between);
-        }
-
-        .more-details {
-            padding: 0 30px 0 0;
-        }
-
-        a {
-            @include flex(center, space-between);
-            cursor: pointer;
-            position: relative;
-
-            @include media-desktop(1024) {
-                padding: 0 40px 0 0;
-                &:hover {
-                    span {
-                        right: 0;
-                    }
-                }
+        &:hover {
+            .about-bottom__icon-animate {
+                transform: translateX(10px);
             }
+        }
+    }
 
-            span {
-                transition: all 0.2s ease 0.1s;
-                position: absolute;
-                right: 10px;
-                @include center();
-            }
+    &__icon {
+        @include center();
+        margin-left: 10px;
+        transition: all 0.3s ease-in-out;
+
+        &.active {
+            transform: rotate(180deg);
         }
     }
 }
 
-.about {
-    &-video {
-        @include adaptive-value('width', 475, 305, 1);
-        @include adaptive-value('height', 430, 275, 1);
-        @include center();
-        position: relative;
-
-        @include media(375) {
-            width: 270px;
-            height: 240px;
-        }
-
-        &:hover {
-            .about-image-border {
-                transform: rotate(0);
-                width: 94%;
-                height: 94%;
-            }
-        }
-    }
-
-    &-image {
-        width: 95%;
-        height: 95%;
-        overflow: hidden;
-        object-fit: cover;
-        border-radius: $border-radius;
-        z-index: 6;
-
-        @include media(375) {
-            width: 100%;
-            height: 100%;
-        }
-    }
-
-    &-image-border {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        border: 1px solid $primary-color;
-        transform: rotate(5.88deg);
-        border-radius: $border-radius;
-        z-index: 5;
-        @extend %transition;
-    }
+.video__border {
+    transform: rotate(5.88deg);
 }

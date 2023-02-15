@@ -9,7 +9,7 @@ import Logo from '@/components/Atoms/Logo';
 
 const Header = () => {
     const [show, setShow] = useState(false);
-    const isMobile = useIsMobile(768);
+    const isMobile = useIsMobile(769);
 
     return (
         <header className="header">
