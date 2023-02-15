@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { AiOutlineArrowRight } from 'react-icons/ai';
 import Image from 'next/image';
 import { useIsMobile } from '@/hooks/useIsMobile';
 import { about__desc } from '@/utils/data';
 import StaffingModal from '@/components/Modals/StaffingModal';
-import { ArrowRight, ArrowDown } from '@/components/icons';
+import { ArrowDown } from '@/components/icons';
 import AboutImage from '@/assets/images/About-us.png';
 
 const AboutUs = () => {
@@ -49,7 +50,7 @@ const AboutUs = () => {
                     Сведения о кадровом составе
                     {!isMobile && (
                         <span className="about-bottom__icon about-bottom__icon-animate">
-                            <ArrowRight />
+                            <AiOutlineArrowRight />
                         </span>
                     )}
                 </a>

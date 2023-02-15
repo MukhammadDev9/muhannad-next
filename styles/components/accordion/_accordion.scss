@@ -24,7 +24,7 @@
 
     &__title {
         @include flex(center, space-between);
-        @include font(16, 12, 600, 19px);
+        @include font(16, 12, 600, 22px);
         padding: 20px 30px;
         color: $grey-color;
         cursor: pointer;
@@ -45,9 +45,10 @@
     &__icon {
         width: 16px;
         transition: all 0.4s ease-in-out;
+        transform: rotate(270deg);
 
         &.active {
-            transform: rotate(270deg);
+            transform: rotate(0);
         }
     }
 

@@ -71,16 +71,18 @@
     cursor: pointer;
 }
 
-@include mobile {
+@include media(768) {
     #banner,
-    #about-us {
+    #about-us,
+    #services {
         scroll-margin-top: $header-height + 25;
     }
 }
 
 @include media-desktop(768) {
     #banner,
-    #about-us {
+    #about-us,
+    #services {
         scroll-margin-top: 25px;
     }
 }
