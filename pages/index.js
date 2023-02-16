@@ -4,6 +4,7 @@ import Banner from '@/components/Banner';
 import AboutUs from '@/components/AboutUs';
 import Accordions from '@/components/Accordions';
 import Services from '@/components/Services';
+import Sertificate from '@/components/Sertificate';
 
 export default function Home() {
     return (
@@ -13,6 +14,7 @@ export default function Home() {
                 <AboutUs />
                 <Accordions />
                 <Services />
+                <Sertificate />
             </div>
         </Page>
     );

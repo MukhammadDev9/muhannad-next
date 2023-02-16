@@ -31,12 +31,29 @@
         @include adaptive-value('column-gap', 20, 2, 1);
         @include adaptive-value('height', 175, 100, 1);
         box-shadow: 0px 0px 10px rgba(10, 177, 229, 0.1);
-        transition: all 3.3s ease-in-out;
+        position: relative;
+        background: linear-gradient(to bottom, white, white);
+        z-index: 1;
+        transition: all 0.4s ease;
 
-        &:hover {
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: linear-gradient(270deg, #68dbff 0%, #04c3ffb8 100%);
             box-shadow: 0px 0px 10px rgba(10, 177, 229, 0.1);
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: -1;
+        }
 
+        &:hover {
+            &::before {
+                opacity: 1;
+            }
             .services-grid__number,
             .services-grid__text {
                 color: $white-color;
@@ -159,7 +176,7 @@
             line-height: 15px;
         }
 
-        &:hover + .services-bottom__icon {
+        &:hover .services-bottom__icon {
             transform: translateX(10px);
         }
     }

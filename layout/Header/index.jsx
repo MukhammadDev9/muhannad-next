@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BiPhoneCall } from 'react-icons/bi';
 import { useIsMobile } from '@/hooks/useIsMobile';
+import { useKeyPress } from '@/hooks/useKeyPress';
 import Nav from './components/Nav';
 import BurgerMenu from '@/components/BurgerMenu';
 import CallLink from '@/components/Atoms/CallLink';
@@ -10,6 +11,29 @@ import Logo from '@/components/Atoms/Logo';
 const Header = () => {
     const [show, setShow] = useState(false);
     const isMobile = useIsMobile(769);
+    const escape = useKeyPress('Escape');
+
+    useEffect(() => {
+        if (escape) {
+            setShow(false);
+        }
+    }, [escape]);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth > 769) return setShow(false);
+        };
+
+        window.addEventListener('resize', handleResize);
+    });
+
+    useEffect(() => {
+        if (show) {
+            document.body.classList.add('scroll-hidden');
+        } else {
+            document.body.classList.remove('scroll-hidden');
+        }
+    }, [show]);
 
     return (
         <header className="header">
@@ -36,7 +60,11 @@ const Header = () => {
                     </span>
                 )}
             </div>
-            <BurgerMenu show={show} setShow={setShow} />
+            {isMobile ? (
+                <BurgerMenu show={show} setShow={setShow} />
+            ) : (
+                () => setShow(false)
+            )}
         </header>
     );
 };

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { GrClose } from 'react-icons/gr';
 import Image from 'next/image';
 import { useKeyPress } from '@/hooks/useKeyPress';
-import StaffingImage from '@/assets/images/Staffing-info.png';
+import StaffingImage from '@/assets/images/Staffing/Staffing-info.png';
 
 const StaffingModal = ({ show, setShow }) => {
     const escape = useKeyPress('Escape');

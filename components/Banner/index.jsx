@@ -1,6 +1,6 @@
+import React from 'react';
 import Image from 'next/image';
-import React, { useEffect } from 'react';
-import BannerImage from '@/assets/images/Banner.png';
+import BannerImage from '@/assets/images/Banner/Banner2.png';
 
 const Banner = () => {
     return (
