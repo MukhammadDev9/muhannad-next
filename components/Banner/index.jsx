@@ -15,7 +15,9 @@ const Banner = () => {
                     поставщиков строительной продукции и оказывает услуги по
                     сертификации и испытаниям данных продукций.
                 </p>
-                <button className="btn">Написать нам письмо</button>
+                <a href="#contact-us" className="btn">
+                    Написать нам письмо
+                </a>
             </div>
             <div id="banner" className="banner__right">
                 <div className="video">

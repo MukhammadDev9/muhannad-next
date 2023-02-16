@@ -86,7 +86,7 @@ const menu_list = [
     },
     {
         title: 'Контакты',
-        link: '#contacts',
+        link: '#contact-us',
     },
 ];
 
