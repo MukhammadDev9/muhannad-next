@@ -1,0 +1,15 @@
+.sertificate-banner {
+    .video {
+        width: 100%;
+
+        &__border {
+            width: 97%;
+            transform: matrix(1, 0.03, -0.17, 0.98, 0, 0);
+
+            @include media(425) {
+                height: 105%;
+                transform: matrix(1, 0.09, -0.06, 1, 0, 0);
+            }
+        }
+    }
+}

@@ -13,6 +13,8 @@ const Header = () => {
     const isMobile = useIsMobile(769);
     const escape = useKeyPress('Escape');
 
+    const onClose = () => setShow(false);
+
     useEffect(() => {
         if (escape) {
             setShow(false);
@@ -60,11 +62,7 @@ const Header = () => {
                     </span>
                 )}
             </div>
-            {isMobile ? (
-                <BurgerMenu show={show} setShow={setShow} />
-            ) : (
-                () => setShow(false)
-            )}
+            {isMobile ? <BurgerMenu show={show} setShow={setShow} /> : onClose}
         </header>
     );
 };
