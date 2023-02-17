@@ -33,33 +33,30 @@
 .about-list {
     display: flex;
     flex-direction: column;
-    @include adaptive-value('row-gap', 22, 26, 1);
-    transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-    overflow: hidden;
+    transition: all 250s ease-in;
 
     @include media(1024) {
-        max-height: 375px;
-    }
+        display: -webkit-box;
+        -webkit-line-clamp: 9;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        transition: all 250s ease-in;
 
-    @include mobile {
-        max-height: 200px;
-    }
-    @include media(425) {
-        max-height: 310px;
-    }
-
-    @include media(375) {
-        max-height: 460px;
-    }
-
-    &.active {
-        max-height: 9999px;
-        transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+        &.active {
+            display: -webkit-box;
+            -webkit-line-clamp: 100;
+            -webkit-box-orient: vertical;
+            transition: all 250s ease-in;
+        }
     }
 
     &__item {
-        @include font(14, 14, 500, 17px);
+        @include font(14, 14, 500, 17, 15);
         color: $description-color;
+
+        &:not(:last-child) {
+            @include adaptive-value('margin-bottom', 22, 26, 1);
+        }
     }
 }
 
@@ -73,13 +70,12 @@
     &__link {
         @include flex(center, space-between);
         position: relative;
-        @include font(16, 12, 500, 19px);
+        @include font(16, 12, 500, 19, 15);
         color: $primary-color;
         cursor: pointer;
 
         @include media(425) {
             font-size: $font-size-12;
-            line-height: 15px;
         }
 
         &:hover {

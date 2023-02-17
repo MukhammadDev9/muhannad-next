@@ -1,7 +1,7 @@
 .footer {
     background: $primary-color;
     @include adaptive-value('padding-block', 64, 30, 1);
-    @include font(16, 14, 400, 22px);
+    @include font(16, 14, 400, 22, 16);
     color: $white-color;
 
     &__container {

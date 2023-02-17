@@ -1,3 +1,16 @@
+body {
+    @include media-desktop(768) {
+        &.scroll-hidden {
+            overflow: hidden;
+            margin-right: 10px;
+
+            .header {
+                padding-right: 10px;
+            }
+        }
+    }
+}
+
 .wrapper {
     position: relative;
     overflow: hidden;
@@ -16,12 +29,8 @@
 }
 
 .title {
-    @include font(36, 24, 500, 44px);
+    @include font(36, 24, 500, 44, 29);
     color: $primary-color;
-
-    @include mobile {
-        line-height: 29px;
-    }
 }
 
 .btn,
@@ -34,8 +43,7 @@
 }
 
 .btn {
-    @include font(18, 14, 700, 22px);
-    @include adaptive-value('line-height', 22, 17, 1);
+    @include font(18, 14, 700, 22, 17);
     @include adaptive-value('padding-block', 15, 10, 1);
     @include adaptive-value('padding-inline', 40, 20, 1);
 
@@ -46,18 +54,15 @@
 }
 
 .btn-call {
+    @include flex();
     @include adaptive-value('padding-block', 10, 8, 1);
     @include adaptive-value('padding-inline', 30, 10, 1);
+    @include font(16, 14, 700, 19, 15);
+    font-weight: bold !important;
     border-radius: $border-radius;
-    a {
-        @include font(16, 14, 700, 19px);
-    }
-
-    span {
-        @include center();
-    }
 
     @include media(768) {
+        width: 190px;
         padding: 8px 10px;
     }
 

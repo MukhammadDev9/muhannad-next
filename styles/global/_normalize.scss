@@ -7,11 +7,16 @@
 body {
     font-family: $inter !important;
     font-size: $font-size-16;
+}
 
-    &.scroll-hidden {
-        overflow: hidden;
-        padding-right: 16px;
-    }
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: $primary-color;
+    box-shadow: inset 2px 2px 5px 0 hsl(0deg 0% 100% / 50%);
 }
 
 ul li {

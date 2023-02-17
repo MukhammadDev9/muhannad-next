@@ -39,7 +39,7 @@ const Services = () => {
                             керамзитобетонные стеновые
                         </p>
                     </div>
-                    <div className="services-grid__item">
+                    <div className="services-grid__item services-grid__item_big">
                         <p className="services-grid__number">5</p>
                         <p className="services-grid__text">
                             Цилиндры и полуцилиндры теплоизоляционные из

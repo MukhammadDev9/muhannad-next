@@ -4,10 +4,10 @@
     justify-content: $justifyContent;
 }
 
-@mixin font($size, $min_size, $weight, $height) {
+@mixin font($size, $min_size, $weight, $height, $min_height: 16) {
     @include adaptive-value('font-size', $size, $min_size, 1);
+    @include adaptive-value('line-height', $height, $min_height, 1);
     font-weight: $weight;
-    line-height: $height;
 }
 
 $maxWidth: 1440;

@@ -50,13 +50,6 @@ const Sertificate = () => {
                             </span>
                         </li>
                     ))}
-                    <SertificateModal show={show} setShow={setShow}>
-                        <Image
-                            className="sertificate__image"
-                            src={images[current || 0]}
-                            alt="Sertificate"
-                        />
-                    </SertificateModal>
                 </ul>
                 <div className="sertificate-banner">
                     <div className="video">
@@ -69,6 +62,11 @@ const Sertificate = () => {
                     </div>
                 </div>
             </div>
+            <SertificateModal
+                show={show}
+                setShow={setShow}
+                image={images[current || 0]}
+            />
         </div>
     );
 };

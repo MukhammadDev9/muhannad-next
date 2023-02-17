@@ -47,12 +47,10 @@ const Header = () => {
                         <div className="header__menu">
                             <Nav />
                         </div>
-                        <a href="tel:+998622256999" className="btn-call call">
+                        <CallLink callLink="tel:+998622256999" button={true}>
                             <BiPhoneCall size={24} className="call__icon" />
-                            <CallLink callLink={'tel:+998622256999'}>
-                                +998 62 225 69 99
-                            </CallLink>
-                        </a>
+                            +998 62 225 69 99
+                        </CallLink>
                     </>
                 )}
 

@@ -17,8 +17,7 @@
     }
 
     &__title {
-        @include font(36, 18, 700, 44px);
-        @include adaptive-value('line-height', 44, 22, 1);
+        @include font(36, 18, 700, 44, 22);
         @include adaptive-value('margin-bottom', 35, 18, 1);
         color: $primary-color;
 
@@ -28,15 +27,13 @@
     }
 
     &__subtitle {
-        @include font(26, 14, 700, 31px);
-        @include adaptive-value('line-height', 31, 17, 1);
+        @include font(26, 14, 700, 31, 17);
         color: $dark-grey-color;
         margin-bottom: 16px;
     }
 
     &__description {
-        @include font(16, 14, 500, 19px);
-        @include adaptive-value('line-height', 19, 17, 1);
+        @include font(16, 14, 500, 19, 17);
         @include adaptive-value('margin-bottom', 32, 26, 1);
         color: $light-grey-color;
     }

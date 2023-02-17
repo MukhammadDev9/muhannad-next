@@ -17,7 +17,7 @@ export default function Home() {
                 <Accordions />
                 <Services />
                 <Sertificate />
-                <ContactUs />
+                {/* <ContactUs /> */}
             </div>
             <Location />
         </Page>

@@ -11,7 +11,6 @@
 
 // Atoms
 @import './components/atoms/logo';
-@import './components/burger-menu/burger-menu';
 @import './components/atoms/call';
 
 // Layout
@@ -24,7 +23,6 @@
 @import './components/home/about-us';
 @import './components/home/services';
 @import './components/home/sertificate';
-@import './components/sertificate-banner/sertificate-banner';
 @import './components/home/contact-us';
 @import './components/home/location';
 
@@ -34,3 +32,7 @@
 
 // Accordion
 @import './components/accordion/accordion';
+
+// Components
+@import './components/burger-menu/burger-menu';
+@import './components/sertificate-banner/sertificate-banner';

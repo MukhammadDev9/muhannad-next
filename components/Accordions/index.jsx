@@ -18,16 +18,20 @@ const Accordions = () => {
                     <div className="accordion__title" onClick={() => toggle(i)}>
                         <h3 className="accordion__title-text">{item.title}</h3>
                         <span
-                            className={`accordion__icon ${
-                                selected === i && 'active'
-                            }`}>
+                            className={
+                                selected === i
+                                    ? 'accordion__icon active'
+                                    : 'accordion__icon'
+                            }>
                             <ArrowDown color="#000" />
                         </span>
                     </div>
                     <div
-                        className={`accordion__content ${
-                            selected === i && 'show'
-                        }`}>
+                        className={
+                            selected === i
+                                ? 'accordion__content show'
+                                : 'accordion__content'
+                        }>
                         {item.subTitle && (
                             <div className="accordion__subtitle">
                                 {item.subTitle}

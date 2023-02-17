@@ -35,7 +35,10 @@ const AboutUs = () => {
                         О нас
                     </h2>
 
-                    <ul className={`about-list ${openMore && 'active'}`}>
+                    <ul
+                        className={
+                            openMore ? 'about-list active' : 'about-list'
+                        }>
                         {about__desc.map((text, i) => (
                             <li className="about-list__item" key={i}>
                                 <p>{text}</p>

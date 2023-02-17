@@ -10,6 +10,6 @@
     }
 
     &__link {
-        @include font(16, 14, 400, 19px);
+        @include font(16, 14, 400, 19, 16);
     }
 }

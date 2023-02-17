@@ -24,7 +24,7 @@
 
     &__title {
         @include flex(center, space-between);
-        @include font(16, 12, 600, 22px);
+        @include font(16, 12, 600, 22, 16);
         padding: 20px 30px;
         color: $grey-color;
         cursor: pointer;
@@ -53,7 +53,7 @@
     }
 
     &__content {
-        @include font(16, 12, 500, 19px);
+        @include font(16, 12, 500, 19, 16);
         color: $grey-color;
         max-height: 0;
         overflow: hidden;

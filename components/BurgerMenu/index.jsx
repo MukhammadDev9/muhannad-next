@@ -1,7 +1,7 @@
+import React, { useEffect } from 'react';
 import { useIsMobile } from '@/hooks/useIsMobile';
 import { useKeyPress } from '@/hooks/useKeyPress';
 import Nav from '@/layout/Header/components/Nav';
-import React, { useEffect, useRef } from 'react';
 import { BiPhoneCall } from 'react-icons/bi';
 import { GrFormClose } from 'react-icons/gr';
 import CallLink from '../Atoms/CallLink';
@@ -9,19 +9,6 @@ import CallLink from '../Atoms/CallLink';
 const BurgerMenu = ({ show, setShow }) => {
     const isMobile = useIsMobile(1024);
     const escape = useKeyPress('Escape');
-    const menuRef = useRef();
-
-    useEffect(() => {
-        const handler = (e) => {
-            if (!menuRef?.current?.contains(e.target)) {
-                setShow(false);
-            }
-        };
-
-        document.addEventListener('mousedown', handler);
-    });
-
-    
 
     useEffect(() => {
         if (isMobile) {
@@ -38,9 +25,12 @@ const BurgerMenu = ({ show, setShow }) => {
     }, [escape]);
 
     return (
-        <div className={`menu ${show && 'show'}`}>
-            <div className="menu-wrap" ref={menuRef}>
-                <div className="menu__close">
+        <div
+            className={show ? 'menu show' : 'menu'}
+            onClick={() => setShow(false)}>
+            <div className="menu__opacity"></div>
+            <div className="menu__content" onClick={(e) => e.stopPropagation()}>
+                <div className="menu__icon">
                     <GrFormClose
                         className="icon"
                         size={34}
@@ -48,14 +38,10 @@ const BurgerMenu = ({ show, setShow }) => {
                     />
                 </div>
                 <Nav setShow={setShow} />
-                <button className="btn btn-call">
-                    <span>
-                        <BiPhoneCall size={24} className="call-icon" />
-                        <CallLink callLink={'tel:+998622256999'}>
-                            +998 62 225 69 99
-                        </CallLink>
-                    </span>
-                </button>
+                <CallLink callLink={'tel:+998622256999'} button={true}>
+                    <BiPhoneCall size={24} className="call-icon" />
+                    +998 62 225 69 99
+                </CallLink>
             </div>
         </div>
     );

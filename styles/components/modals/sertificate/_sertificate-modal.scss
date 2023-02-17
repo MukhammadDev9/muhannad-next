@@ -1,68 +1,47 @@
 .sertificate-modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(74, 74, 74, 0.5);
     position: fixed;
     top: 0;
     left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 9999;
-    visibility: hidden;
-    transition: all 0.5s ease-in-out;
-    user-select: none;
+    @include flex();
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    z-index: 999;
 
-    &.show {
-        visibility: visible;
-
-        .sertificate-modal__item {
-            opacity: 1;
-        }
-
-        &::before {
-            opacity: 1;
-        }
-    }
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        opacity: 0;
-        transition: opacity 0.5s ease;
-        z-index: -1;
+    &.active {
+        opacity: 1;
+        pointer-events: all;
     }
 
-    &__item {
-        position: fixed;
-        top: 50%;
-        left: 50%;
+    &__content {
+        gap: 10px;
+        position: relative;
+        padding: 20px 20px 20px 20px;
+        border-radius: 12px;
+        background: #fff;
+        // @include flex(flex-start, flex-end);
+        @include flex(flex-end, flex-start);
+        flex-direction: column-reverse;
+    }
+
+    &__image {
         @include adaptive-value('width', 395, 180, 1);
         @include adaptive-value('height', 585, 265, 1);
-        background: #fff;
-        transform: translate(-50%, -50%);
-        padding: 15px;
-        @include flex();
-        z-index: 3;
-        opacity: 0;
-
-        .sertificate__image {
-            @include adaptive-value('width', 395, 180, 1);
-            @include adaptive-value('height', 585, 265, 1);
-        }
+        object-fit: cover;
     }
 
     &__icon {
-        width: 25px;
-        height: 25px;
-        padding: 7px;
-        position: absolute;
-        top: 0;
-        @include adaptive-value('right', -30, -40, 1);
-        background: #fff;
-        border-radius: $border-radius;
         @include flex();
+        padding: 10px;
+        background: #eee;
+        border-radius: $border-radius;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: #bbb;
+        }
     }
 }
