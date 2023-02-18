@@ -5,6 +5,7 @@ import Nav from '@/layout/Header/components/Nav';
 import { BiPhoneCall } from 'react-icons/bi';
 import { GrFormClose } from 'react-icons/gr';
 import CallLink from '../Atoms/CallLink';
+import clsx from 'clsx';
 
 const BurgerMenu = ({ show, setShow }) => {
     const isMobile = useIsMobile(1024);
@@ -26,7 +27,7 @@ const BurgerMenu = ({ show, setShow }) => {
 
     return (
         <div
-            className={show ? 'menu show' : 'menu'}
+            className={clsx('menu', show && 'show')}
             onClick={() => setShow(false)}>
             <div className="menu__opacity"></div>
             <div className="menu__content" onClick={(e) => e.stopPropagation()}>

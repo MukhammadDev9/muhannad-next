@@ -1,9 +1,14 @@
+import clsx from 'clsx';
 import React from 'react';
 
-const CallLink = ({ children, callLink, button }) => (
+const CallLink = ({ children, callLink, button, classname }) => (
     <a
         href={callLink}
-        className={`call__link ${button && 'btn btn-call call'}`}>
+        className={clsx(
+            'call__link',
+            button && 'btn btn-call call',
+            classname && classname,
+        )}>
         {children}
     </a>
 );

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { accordion_data } from '@/utils/data';
 import { ArrowDown } from '@/components/icons';
 import Link from 'next/link';
+import clsx from 'clsx';
 
 const Accordions = () => {
     const [selected, setSelected] = useState(null);
@@ -19,20 +20,18 @@ const Accordions = () => {
                     <div className="accordion__title" onClick={() => toggle(i)}>
                         <h3 className="accordion__title-text">{item.title}</h3>
                         <span
-                            className={
-                                selected === i
-                                    ? 'accordion__icon active'
-                                    : 'accordion__icon'
-                            }>
+                            className={clsx(
+                                'accordion__icon',
+                                selected === i && 'active',
+                            )}>
                             <ArrowDown color="#000" />
                         </span>
                     </div>
                     <div
-                        className={
-                            selected === i
-                                ? 'accordion__content show'
-                                : 'accordion__content'
-                        }>
+                        className={clsx(
+                            'accordion__content',
+                            selected === i && 'show',
+                        )}>
                         {item.subTitle && (
                             <div className="accordion__subtitle">
                                 {item.subTitle}

@@ -65,4 +65,20 @@
 .footer-socialmedia {
     display: flex;
     column-gap: 36px;
+
+    &.colors {
+        column-gap: 18px;
+
+        .telegram {
+            color: #29a9eb;
+        }
+
+        .facebook {
+            color: #1877f2;
+        }
+
+        .instagram {
+            color: #fa7e1e;
+        }
+    }
 }

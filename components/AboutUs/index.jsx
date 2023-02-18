@@ -6,6 +6,7 @@ import { about__desc } from '@/utils/data';
 import StaffingModal from '@/components/Modals/StaffingModal';
 import { ArrowDown } from '@/components/icons';
 import AboutImage from '@/assets/images/About-us/About-us.png';
+import clsx from 'clsx';
 
 const AboutUs = () => {
     const [show, setShow] = useState(false);
@@ -35,10 +36,7 @@ const AboutUs = () => {
                         О нас
                     </h2>
 
-                    <ul
-                        className={
-                            openMore ? 'about-list active' : 'about-list'
-                        }>
+                    <ul className={clsx('about-list', openMore && 'active')}>
                         {about__desc.map((text, i) => (
                             <li className="about-list__item" key={i}>
                                 <p>{text}</p>
@@ -63,9 +61,10 @@ const AboutUs = () => {
                         onClick={toggle}>
                         Подробнее
                         <span
-                            className={`about-bottom__icon ${
-                                openMore && 'active'
-                            }`}>
+                            className={clsx(
+                                'about-bottom__icon',
+                                openMore && 'active',
+                            )}>
                             <ArrowDown />
                         </span>
                     </a>

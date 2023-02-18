@@ -1,3 +1,96 @@
-.contact-us {
+.contactus {
     margin: 56px 0;
+
+    &__title {
+        @include adaptive-value('margin-bottom', 18, 14, 1);
+    }
+
+    &__subtitle {
+        @include font(16, 14, 400, 19, 17);
+        color: $grey-color;
+        @include adaptive-value('margin-bottom', 36, 20, 1);
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: 45% 45%;
+        gap: 2rem;
+        justify-content: space-between;
+
+        @include media(820) {
+            grid-template-columns: 100%;
+            row-gap: 40px;
+        }
+    }
+}
+.form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    &__item {
+        margin-bottom: 1rem;
+        grid-column: span 2;
+
+        &_label {
+            margin-bottom: 12px;
+            @include font(16, 14, 400, 19, 17);
+        }
+
+        &_input {
+            padding: 10px 16px;
+            border: 1px solid #e1e1e1;
+            width: 100%;
+            @include font(14, 12, 400, 17, 17);
+
+            &::placeholder,
+            &-textarea::placeholder {
+                @include font(14, 12, 400, 17, 17);
+                font-family: $inter;
+                color: #8c8c8c;
+            }
+
+            &-textarea {
+                resize: none;
+                width: 100%;
+                height: 165px;
+                font-size: 16px;
+            }
+        }
+
+        &-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .form__input--area {
+                width: 45%;
+            }
+        }
+    }
+
+    &__input--area {
+        @include flex(flex-start, flex-end);
+        flex-direction: column;
+    }
+}
+.contactus-content {
+    padding-right: 15px;
+
+    &__list {
+    }
+
+    &__item {
+        margin-bottom: 28px;
+    }
+
+    &__title {
+        @include font(16, 16, 600, 19, 19);
+        color: $dark-grey-color;
+        margin-bottom: 1rem;
+    }
+
+    &__text {
+        @include font(16, 16, 500, 19, 19);
+        color: $light-grey-color;
+    }
 }
