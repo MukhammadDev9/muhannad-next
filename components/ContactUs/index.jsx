@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CallLink from '../Atoms/CallLink';
 import SocialMedia from '../SocialMedia';
 
 const ContactUs = () => {
+    const initialState = {
+        name: '',
+        surname: '',
+        email: '',
+        message: '',
+    };
+    const [details, setDetails] = useState(initialState);
+
+    const onSubmit = () => {
+        console.log(details);
+    };
     return (
         <div id="contact-us" className="contactus">
             <h1 className="contactus__title title">Свяжитесь с нами онлайн</h1>
@@ -10,7 +21,7 @@ const ContactUs = () => {
                 Оставьте нам сообщение и мы вам ответим
             </p>
             <div className="contactus__container">
-                <form action="#" className="contactus__form">
+                <form className="contactus__form" onSubmit={onSubmit}>
                     <div className="form__item form__item-flex">
                         <div className="form__input--area">
                             <label className="form__item_label" htmlFor="name">
@@ -20,7 +31,15 @@ const ContactUs = () => {
                                 className="form__item_input"
                                 type="text"
                                 id="name"
+                                name="name"
                                 placeholder="Введите имя"
+                                onChange={(e) =>
+                                    setDetails({
+                                        ...details,
+                                        name: e.target.value,
+                                    })
+                                }
+                                value={details.name}
                                 required
                             />
                         </div>
@@ -34,7 +53,15 @@ const ContactUs = () => {
                                 className="form__item_input"
                                 type="text"
                                 id="surname"
+                                name="surname"
                                 placeholder="Введите фамилию"
+                                onChange={(e) =>
+                                    setDetails({
+                                        ...details,
+                                        surname: e.target.value,
+                                    })
+                                }
+                                value={details.surname}
                                 required
                             />
                         </div>
@@ -48,7 +75,15 @@ const ContactUs = () => {
                                 className="form__item_input"
                                 type="email"
                                 id="email"
+                                name="email"
                                 placeholder="Введите Email"
+                                onChange={(e) =>
+                                    setDetails({
+                                        ...details,
+                                        email: e.target.value,
+                                    })
+                                }
+                                value={details.email}
                                 required
                             />
                         </div>
@@ -64,6 +99,14 @@ const ContactUs = () => {
                                 className="form__item_input form__item_input-textarea"
                                 type="text"
                                 id="textarea"
+                                name="message"
+                                onChange={(e) =>
+                                    setDetails({
+                                        ...details,
+                                        message: e.target.value,
+                                    })
+                                }
+                                value={details.message}
                                 placeholder="Введите сообщение"
                             />
                         </div>

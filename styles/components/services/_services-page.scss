@@ -1,4 +1,6 @@
 .services-page {
+    margin-bottom: 55px;
+    
     &__title {
         @include font(24, 18, 600, 29, 25);
         color: $dark-grey-color;
