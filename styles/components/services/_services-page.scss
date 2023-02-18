@@ -1,0 +1,27 @@
+.services-page {
+    &__title {
+        @include font(24, 18, 600, 29, 25);
+        color: $dark-grey-color;
+        @include adaptive-value('margin-bottom', 42, 28, 1);
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+        @include media(600) {
+            grid-template-columns: 100%;
+        }
+    }
+
+    &__list {
+        padding-left: 25px;
+    }
+
+    &__item {
+        list-style: disc;
+        @include font(16, 14, 500, 19, 20);
+        color: $dark-grey-color;
+        margin-bottom: 5px;
+    }
+}

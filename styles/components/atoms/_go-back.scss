@@ -3,6 +3,9 @@
     @include flex(center, flex-start);
     @include adaptive-value('margin-top', 45, 20, 1);
     @include adaptive-value('margin-bottom', 38, 20, 1);
+    @include mobile {
+        margin-top: $header-height + 30;
+    }
 
     &__link {
         @include flex();

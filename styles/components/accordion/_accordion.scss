@@ -96,10 +96,9 @@
 .accordion-moredetails {
     width: 100%;
     @include flex(center, flex-start);
-    margin-bottom: 15px;
+    margin-block: 15px;
 
     &__link {
         color: $primary-color;
-        
     }
 }
