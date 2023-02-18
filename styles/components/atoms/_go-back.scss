@@ -1,0 +1,22 @@
+.go-back {
+    width: 100%;
+    @include flex(center, flex-start);
+    @include adaptive-value('margin-top', 45, 20, 1);
+    @include adaptive-value('margin-bottom', 38, 20, 1);
+
+    &__link {
+        @include flex();
+        color: $primary-color;
+
+        &:hover {
+            .info-top__icon {
+                transform: translateX(-10px);
+            }
+        }
+    }
+
+    &__icon {
+        margin-right: 10px;
+        transition: all 0.3s ease;
+    }
+}

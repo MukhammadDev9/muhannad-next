@@ -8,12 +8,6 @@ const Info = () => {
 
     return (
         <div className="info">
-            <div className="info-top">
-                <Link href={'/'} className="info-top__back">
-                    <BiArrowBack size={20} className="info-top__icon" />
-                    Orqaga
-                </Link>
-            </div>
             <div className="info__container">
                 <h1 className="info__title">
                     ОПЛАТА ЗА СЕРТИФИКАЦИЮ со стороны органа по сертификации ООО
@@ -28,7 +22,16 @@ const Info = () => {
                         <ul className="info-list">
                             {data.item1.map((item, i) => (
                                 <li className="info-list__item" key={i}>
-                                    {item}
+                                    {item.title}
+                                    <ul className="info-sublist">
+                                        {item.subList?.map((item, j) => (
+                                            <li
+                                                className="info-sublist__item"
+                                                key={j}>
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </li>
                             ))}
                         </ul>
@@ -40,7 +43,16 @@ const Info = () => {
                         <ul className="info-list">
                             {data.item2.map((item, i) => (
                                 <li className="info-list__item" key={i}>
-                                    {item}
+                                    {item.title}
+                                    <ul className="info-sublist">
+                                        {item.subList?.map((item, j) => (
+                                            <li
+                                                className="info-sublist__item"
+                                                key={j}>
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </li>
                             ))}
                         </ul>
@@ -52,7 +64,16 @@ const Info = () => {
                         <ul className="info-list">
                             {data.item3.map((item, i) => (
                                 <li className="info-list__item" key={i}>
-                                    {item}
+                                    {item.title}
+                                    <ul className="info-sublist">
+                                        {item.subList?.map((item, j) => (
+                                            <li
+                                                className="info-sublist__item"
+                                                key={j}>
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </li>
                             ))}
                         </ul>

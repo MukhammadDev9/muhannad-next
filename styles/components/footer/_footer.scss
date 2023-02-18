@@ -49,6 +49,7 @@
 
     &__callLink {
         margin-bottom: 1rem;
+        @include font(16, 14, 400, 19, 20);
 
         &-span {
             @include media(768) {
@@ -59,6 +60,7 @@
 
     &__address p {
         @include adaptive-value('max-width', 440, 250, 1);
+        @include font(16, 14, 400, 19, 20);
     }
 }
 
