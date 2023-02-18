@@ -1,10 +1,12 @@
 import { Page } from '@/layout';
 
-export default function AboutPage() {
+import Info from '@/components/Info';
+
+export default function InfoPage() {
     return (
         <Page>
             <div className="container">
-                <h1>About Page</h1>
+                <Info />
             </div>
         </Page>
     );

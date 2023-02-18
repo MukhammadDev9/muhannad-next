@@ -50,7 +50,7 @@ const Services = () => {
                     </div>
                 </div>
                 <div className="services-bottom">
-                    <Link href="/about-us" className="services-bottom__link">
+                    <Link href="/" className="services-bottom__link">
                         Посмотреть все услуги
                         {!isMobile && (
                             <span className="services-bottom__icon">

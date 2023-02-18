@@ -33,21 +33,35 @@
 .about-list {
     display: flex;
     flex-direction: column;
-    transition: all 250s ease-in;
+    overflow: hidden;
 
     @include media(1024) {
         display: -webkit-box;
-        -webkit-line-clamp: 9;
+        -webkit-line-clamp: 17;
         -webkit-box-orient: vertical;
-        overflow: hidden;
-        transition: all 250s ease-in;
+    }
 
-        &.active {
-            display: -webkit-box;
-            -webkit-line-clamp: 100;
-            -webkit-box-orient: vertical;
-            transition: all 250s ease-in;
-        }
+    @include media(768) {
+        -webkit-line-clamp: 13;
+    }
+
+    @include media(465) {
+        -webkit-line-clamp: 17;
+    }
+
+    @include media(425) {
+        -webkit-line-clamp: 14;
+    }
+
+    @include media(375) {
+        -webkit-line-clamp: 17;
+    }
+
+    &.active {
+        display: -webkit-box;
+        -webkit-line-clamp: 100;
+        -webkit-box-orient: vertical;
+        transition: all 250s ease-in;
     }
 
     &__item {

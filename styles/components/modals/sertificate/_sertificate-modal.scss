@@ -22,7 +22,6 @@
         padding: 20px 20px 20px 20px;
         border-radius: 12px;
         background: #fff;
-        // @include flex(flex-start, flex-end);
         @include flex(flex-end, flex-start);
         flex-direction: column-reverse;
     }

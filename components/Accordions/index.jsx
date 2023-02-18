@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { accordion_data } from '@/utils/data';
 import { ArrowDown } from '@/components/icons';
+import Link from 'next/link';
 
 const Accordions = () => {
     const [selected, setSelected] = useState(null);
@@ -44,6 +45,13 @@ const Accordions = () => {
                                 </li>
                             ))}
                         </ul>
+                        <div className="accordion-moredetails">
+                            <Link
+                                href={'/info'}
+                                className="accordion-moredetails__link">
+                                Подробнее...
+                            </Link>
+                        </div>
                     </div>
                 </div>
             ))}

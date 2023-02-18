@@ -92,3 +92,14 @@
         }
     }
 }
+
+.accordion-moredetails {
+    width: 100%;
+    @include flex(center, flex-start);
+    margin-bottom: 15px;
+
+    &__link {
+        color: $primary-color;
+        
+    }
+}

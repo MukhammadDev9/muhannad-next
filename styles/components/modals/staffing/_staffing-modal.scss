@@ -1,55 +1,46 @@
 .staffing {
-    @include center();
-    @extend %transition;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(74, 74, 74, 0.5);
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-    background: rgba(81, 81, 81, 0.5);
-    width: 100%;
-    height: 100%;
-    visibility: hidden;
+    top: 0;
+    left: 0;
+    @include flex();
     opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    z-index: 999;
 
-    &.show {
-        visibility: visible;
+    &.active {
         opacity: 1;
-
-        .staffing__wrap {
-            transform: scale(1);
-
-            @include mobile {
-                transform: scale(0.7);
-            }
-        }
+        pointer-events: all;
     }
 
-    &__wrap {
-        transform: scale(0);
-        border-radius: 10px;
-        background: $white-color;
-
-        padding: 17px 58px;
-        @include adaptive-value('padding-block', 17, 5, 1);
-        @include adaptive-value('padding-inline', 58, 28, 1);
-        @include mobile {
-            padding-top: 20px;
-        }
-    }
-    .staffing__icon {
-        position: absolute;
-        top: 16px;
-        right: 12px;
-        cursor: pointer;
+    &__content {
+        gap: 10px;
+        position: relative;
+        @include adaptive-value('padding', 20, 12, 1);
+        border-radius: 12px;
+        background: #fff;
+        @include flex(flex-end, flex-start);
+        flex-direction: column-reverse;
     }
 
     &__image {
-        @include adaptive-value('width', 925, 330, 1);
-        @include adaptive-value('height', 600, 220, 1);
+        @include adaptive-value('width', 925, 280, 1);
+        @include adaptive-value('height', 600, 180, 1);
         object-fit: contain;
-        @include mobile {
-            object-fit: cover;
+    }
+
+    &__icon {
+        @include flex();
+        padding: 10px;
+        background: #eee;
+        border-radius: $border-radius;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: #bbb;
         }
     }
 }
