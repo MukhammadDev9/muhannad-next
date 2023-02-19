@@ -13,8 +13,6 @@ const Header = () => {
     const isMobile = useIsMobile(769);
     const escape = useKeyPress('Escape');
 
-    const onClose = () => setShow(false);
-
     useEffect(() => {
         if (escape) {
             setShow(false);
@@ -23,11 +21,12 @@ const Header = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth > 769) return setShow(false);
+            if (window.innerWidth > 769 && !isMobile) return setShow(false);
         };
 
         window.addEventListener('resize', handleResize);
-    });
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     useEffect(() => {
         if (show) {
@@ -60,7 +59,7 @@ const Header = () => {
                     </span>
                 )}
             </div>
-            {isMobile ? <BurgerMenu show={show} setShow={setShow} /> : onClose}
+            {isMobile && <BurgerMenu show={show} setShow={setShow} />}
         </header>
     );
 };

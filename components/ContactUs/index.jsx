@@ -111,7 +111,7 @@ const ContactUs = () => {
                             />
                         </div>
                     </div>
-                    <button type="button" className="form__item-btn btn">
+                    <button type="submit" className="form__item-btn btn">
                         Отправить
                     </button>
                 </form>
@@ -122,9 +122,9 @@ const ContactUs = () => {
                                 Контакты
                             </h4>
                             <CallLink
-                                callLink={'tel:+998942315500'}
+                                callLink={'tel:+998919980999'}
                                 classname="contactus-content__text">
-                                +998 94 231 55 00
+                                +998 91 998 09 99
                             </CallLink>
                         </li>
                         <li className="contactus-content__item">
