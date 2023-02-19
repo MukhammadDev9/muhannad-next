@@ -12,7 +12,10 @@ const ContactUs = () => {
     const [details, setDetails] = useState(initialState);
 
     const onSubmit = () => {
-        console.log(details);
+        const sent = `Имя: ${details.name}, Фамилия: ${details.surname}, Email: ${details.email}, Сообщение: ${details.message}`;
+        fetch(
+            `https://api.telegram.org/bot6213967235:AAGd7UNkmgBYUSC42mGbLo9wRgxzC5B9eRQ/sendMessage?text=${sent}&chat_id=@mss_application`,
+        );
     };
     return (
         <div id="contact-us" className="contactus">
@@ -21,7 +24,10 @@ const ContactUs = () => {
                 Оставьте нам сообщение и мы вам ответим
             </p>
             <div className="contactus__container">
-                <form className="contactus__form" onSubmit={onSubmit}>
+                <form
+                    action="#"
+                    className="contactus__form"
+                    onSubmit={onSubmit}>
                     <div className="form__item form__item-flex">
                         <div className="form__input--area">
                             <label className="form__item_label" htmlFor="name">
@@ -108,6 +114,7 @@ const ContactUs = () => {
                                 }
                                 value={details.message}
                                 placeholder="Введите сообщение"
+                                required
                             />
                         </div>
                     </div>
