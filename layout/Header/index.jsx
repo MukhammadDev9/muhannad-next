@@ -42,7 +42,7 @@ const Header = () => {
                 <Logo />
 
                 {!isMobile && (
-                    <>
+                    <div className="header__right">
                         <div className="header__menu">
                             <Nav />
                         </div>
@@ -50,7 +50,7 @@ const Header = () => {
                             <BiPhoneCall size={24} className="call__icon" />
                             +998 62 225 69 99
                         </CallLink>
-                    </>
+                    </div>
                 )}
 
                 {isMobile && (

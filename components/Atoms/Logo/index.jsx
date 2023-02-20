@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import LogoSvg from '@/components/icons/components/Logo';
+import { LogoSvg } from '@/components/icons';
 
 const Logo = () => {
     return (

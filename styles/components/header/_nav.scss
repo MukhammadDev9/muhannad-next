@@ -1,6 +1,4 @@
 .nav {
-    width: 100%;
-    @include flex(center, flex-end);
     &__list {
         @include flex(center, space-between);
         @include adaptive-value('gap', 48, 18, 1);
@@ -9,7 +7,7 @@
         @include mobile {
             align-items: flex-start;
             flex-direction: column;
-            margin-bottom: 58px;
+            margin-block: 58px;
         }
     }
 

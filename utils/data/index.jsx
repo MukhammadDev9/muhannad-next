@@ -73,7 +73,7 @@ const accordion_data = [
 const menu_list = [
     {
         title: 'Главная',
-        link: '/',
+        link: '/#',
     },
     {
         title: 'О нас',

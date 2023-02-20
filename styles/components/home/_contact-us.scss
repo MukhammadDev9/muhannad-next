@@ -15,7 +15,7 @@
     &__container {
         display: grid;
         grid-template-columns: 55% 45%;
-        gap: 1.5rem;
+        @include adaptive-value('gap', 32, 16, 1);
         justify-content: space-between;
 
         @include media(960) {

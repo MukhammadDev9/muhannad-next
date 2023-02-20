@@ -15,4 +15,9 @@
         @include adaptive-value('padding-top', 26, 30, 1);
         @include adaptive-value('padding-bottom', 21, 30, 1);
     }
+
+    &__right {
+        @include flex(center, space-between);
+        gap: 45px;
+    }
 }

@@ -13,14 +13,15 @@ const ContactUs = () => {
     };
     const [details, setDetails] = useState(initialState);
 
-    const onSubmit = () => {
+    const onSubmit = async (event) => {
+        event.preventDefault();
         const message = `<b>Имя:</b> ${details.name}\n<b>Фамилия:</b> ${details.surname}\n<b>Email:</b> ${details.email}\n<b>Сообщение:</b> ${details.message}\n`;
-        console.log(message);
-        axios.post(URL_API, {
+        await axios.post(URL_API, {
             chat_id: CHAT_ID,
             parse_mode: 'html',
             text: message,
         });
+        setDetails(initialState);
     };
     return (
         <div id="contact-us" className="contactus">
