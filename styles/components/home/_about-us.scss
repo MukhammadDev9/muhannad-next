@@ -5,8 +5,9 @@
         @include flex(center, space-between);
         @include adaptive-value('margin-bottom', 55, 32, 1);
         @include adaptive-value('column-gap', 100, 50, 1);
+
         @include mobile {
-            flex-direction: column;
+            flex-direction: column-reverse;
             @include adaptive-value('row-gap', 70, 50, 1);
         }
     }
@@ -66,7 +67,7 @@
 
     &__item {
         @include font(14, 14, 500, 17, 15);
-        color: $description-color;
+        color: $grey-200;
 
         &:not(:last-child) {
             @include adaptive-value('margin-bottom', 22, 26, 1);

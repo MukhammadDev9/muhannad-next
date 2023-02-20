@@ -1,60 +1,49 @@
 .banner {
-    display: inline-flex;
-    column-gap: 52px;
-    @include adaptive-value('padding-top', 100, 62, 1);
-    @include adaptive-value('margin-bottom', 130, 26, 1);
-    @include center();
+    @include adaptive-value('padding-top', 62, 62, 1);
+    @include adaptive-value('margin-bottom', 92, 26, 1);
+    @include flex();
+    position: relative;
 
     @include mobile {
-        margin-top: $header-height - 30;
-    }
-
-    @include mobile {
-        @include adaptive-value('row-gap', 50, 35, 1);
-        padding-top: 62px;
-        margin-bottom: 56px;
-        flex-direction: column-reverse;
+        padding-top: $header-height + 40;
     }
 
     &__title {
-        @include font(36, 18, 700, 44, 22);
-        @include adaptive-value('margin-bottom', 35, 18, 1);
-        color: $primary-color;
-
-        @include media(375) {
-            font-size: $font-size-18;
-        }
+        @include font(36, 16, 700, 44, 19);
+        @include adaptive-value('margin-bottom', 35, 12, 1);
+        color: $white-color;
     }
 
     &__subtitle {
         @include font(26, 14, 700, 31, 17);
-        color: $dark-grey-color;
-        margin-bottom: 16px;
+        @include adaptive-value('margin-bottom', 16, 10, 1);
     }
 
     &__description {
-        @include font(16, 14, 500, 19, 17);
-        @include adaptive-value('margin-bottom', 32, 26, 1);
-        color: $light-grey-color;
+        @include font(16, 12, 500, 19, 15);
+        color: $blue-50;
+        @include adaptive-value('max-width', 630, 280, 1);
+        @include adaptive-value('margin-bottom', 35, 30, 1);
     }
 
-    &__subtitle,
-    &__description {
-        @include media(425) {
-            font-size: $font-size-14;
-        }
-    }
-
-    &__left {
+    &__content {
+        color: $white-color;
+        user-select: none;
+        height: 100%;
         @include flex(flex-start, center);
         flex-direction: column;
+        @include adaptive-value('margin-left', 65, 15, 1);
+        z-index: 10;
     }
 
-    &__right {
-        margin: 0 auto;
-    }
-
-    .video__border {
-        transform: rotate(-4.93deg);
+    &__btn {
+        @include mobile {
+            margin-bottom: 30px;
+        }
+        &:hover {
+            background: $primary-hover;
+            border-color: $primary-hover;
+            color: #fff;
+        }
     }
 }

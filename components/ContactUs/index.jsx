@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import CallLink from '../Atoms/CallLink';
 import SocialMedia from '../SocialMedia';
+import axios from 'axios';
+import { CHAT_ID, URL_API } from '@/utils/https';
 
 const ContactUs = () => {
     const initialState = {
@@ -12,22 +14,22 @@ const ContactUs = () => {
     const [details, setDetails] = useState(initialState);
 
     const onSubmit = () => {
-        const sent = `Имя: ${details.name}, Фамилия: ${details.surname}, Email: ${details.email}, Сообщение: ${details.message}`;
-        fetch(
-            `https://api.telegram.org/bot6213967235:AAGd7UNkmgBYUSC42mGbLo9wRgxzC5B9eRQ/sendMessage?text=${sent}&chat_id=@mss_application`,
-        );
+        const message = `<b>Имя:</b> ${details.name}\n<b>Фамилия:</b> ${details.surname}\n<b>Email:</b> ${details.email}\n<b>Сообщение:</b> ${details.message}\n`;
+        console.log(message);
+        axios.post(URL_API, {
+            chat_id: CHAT_ID,
+            parse_mode: 'html',
+            text: message,
+        });
     };
     return (
         <div id="contact-us" className="contactus">
             <h1 className="contactus__title title">Свяжитесь с нами онлайн</h1>
-            <p className="contactus__subtitle">
-                Оставьте нам сообщение и мы вам ответим
-            </p>
             <div className="contactus__container">
-                <form
-                    action="#"
-                    className="contactus__form"
-                    onSubmit={onSubmit}>
+                <form className="contactus__form form" onSubmit={onSubmit}>
+                    <p className="contactus__subtitle">
+                        Оставьте нам сообщение
+                    </p>
                     <div className="form__item form__item-flex">
                         <div className="form__input--area">
                             <label className="form__item_label" htmlFor="name">
@@ -118,9 +120,11 @@ const ContactUs = () => {
                             />
                         </div>
                     </div>
-                    <button type="submit" className="form__item-btn btn">
-                        Отправить
-                    </button>
+                    <div className="form__item form__item-btn">
+                        <button type="submit" className="btn">
+                            Отправить
+                        </button>
+                    </div>
                 </form>
                 <div className="contactus-content">
                     <ul className="contactus-content__list">
@@ -148,10 +152,12 @@ const ContactUs = () => {
                             <h4 className="contactus-content__title">
                                 Юридический адрес:
                             </h4>
-                            <p className="contactus-content__text">
+                            <a
+                                href="https://goo.gl/maps/qVriMKBvjpTaVBQE6"
+                                className="contactus-content__text">
                                 220911, Хорезмская область, Хивинский район, МФЙ
                                 Шамахулум
-                            </p>
+                            </a>
                         </li>
                         <li className="contactus-content__item">
                             <SocialMedia colors={true} />

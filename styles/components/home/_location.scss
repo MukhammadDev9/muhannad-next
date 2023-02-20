@@ -1,6 +1,13 @@
 .location {
     margin: 36px 0;
-    @include adaptive-value('height', 580, 200, 1);
+
+    &__container {
+        @include adaptive-value('height', 580, 200, 1);
+    }
+
+    &__title {
+        @include adaptive-value('margin-bottom', 36, 20, 1);
+    }
 }
 
 .map {

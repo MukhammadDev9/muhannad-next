@@ -26,7 +26,7 @@
         @include flex(center, space-between);
         @include font(16, 12, 600, 22, 16);
         padding: 20px 30px;
-        color: $grey-color;
+        color: $grey-300;
         cursor: pointer;
 
         @include media(425) {
@@ -54,7 +54,7 @@
 
     &__content {
         @include font(16, 12, 500, 19, 16);
-        color: $grey-color;
+        color: $grey-300;
         max-height: 0;
         overflow: hidden;
         transition: all 0.5s cubic-bezier(0, 1, 0, 1);

@@ -6,13 +6,13 @@
 
     &__title {
         @include font(24, 18, 600, 29, 20);
-        color: $dark-grey-color;
+        color: $grey-400;
         margin-bottom: 1rem;
     }
 
     &__subtitle {
         @include font(16, 14, 500, 19, 17);
-        color: $dark-grey-color;
+        color: $grey-400;
         @include adaptive-value('margin-bottom', 30, 20, 1);
     }
 }
@@ -29,7 +29,7 @@
 
 .info-list {
     @include font(16, 14, 500, 22, 20);
-    color: $dark-grey-color;
+    color: $grey-400;
     padding-left: 25px;
     margin-bottom: 36px;
 

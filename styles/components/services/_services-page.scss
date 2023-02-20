@@ -1,9 +1,9 @@
 .services-page {
     margin-bottom: 55px;
-    
+
     &__title {
         @include font(24, 18, 600, 29, 25);
-        color: $dark-grey-color;
+        color: $grey-400;
         @include adaptive-value('margin-bottom', 42, 28, 1);
     }
 
@@ -23,7 +23,7 @@
     &__item {
         list-style: disc;
         @include font(16, 14, 500, 19, 20);
-        color: $dark-grey-color;
+        color: $grey-400;
         margin-bottom: 5px;
     }
 }

@@ -41,7 +41,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(270deg, #68dbff 0%, #04c3ffb8 100%);
+            background: linear-gradient(
+                270deg,
+                #1a84b7 0%,
+                rgba(12, 121, 173, 0.72) 100%
+            );
             box-shadow: 0px 0px 10px rgba(10, 177, 229, 0.1);
             opacity: 0;
             transition: opacity 0.5s;
@@ -69,16 +73,17 @@
 
     &__number {
         @include font(46, 24, 700, 56, 20);
-        // @include adaptive-value();
         color: $primary-color;
         text-shadow: 3px 0px 4px rgba(10, 177, 229, 0.1);
         @include adaptive-value('margin-right', 20, 10, 1);
+        transition: all 0.4s ease;
     }
 
     &__text {
         word-wrap: break-word;
         @include font(16, 12, 500, 19, 15);
-        color: $grey-color;
+        color: $grey-300;
+        transition: all 0.4s ease;
     }
 }
 

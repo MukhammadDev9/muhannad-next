@@ -18,8 +18,8 @@ export default function Home() {
                 <Services />
                 <Sertificate />
                 <ContactUs />
+                <Location />
             </div>
-            <Location />
         </Page>
     );
 }

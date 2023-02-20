@@ -2,22 +2,23 @@
     margin: 56px 0;
 
     &__title {
-        @include adaptive-value('margin-bottom', 18, 14, 1);
+        @include adaptive-value('margin-bottom', 42, 25, 1);
     }
 
     &__subtitle {
-        @include font(16, 14, 400, 19, 17);
-        color: $grey-color;
-        @include adaptive-value('margin-bottom', 36, 20, 1);
+        @include font(24, 20, 500, 29, 25);
+        color: $primary-color;
+        @include adaptive-value('margin-bottom', 30, 20, 1);
+        grid-column: span 2;
     }
 
     &__container {
         display: grid;
-        grid-template-columns: 45% 45%;
-        gap: 2rem;
+        grid-template-columns: 55% 45%;
+        gap: 1.5rem;
         justify-content: space-between;
 
-        @include media(820) {
+        @include media(960) {
             grid-template-columns: 100%;
             row-gap: 40px;
         }
@@ -26,6 +27,12 @@
 .form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 3px 6px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    @include adaptive-value('padding-block', 40, 20, 1);
+    @include adaptive-value('padding-right', 60, 12, 1);
+    @include adaptive-value('padding-left', 40, 12, 1);
 
     &__item {
         margin-bottom: 1rem;
@@ -66,6 +73,13 @@
                 width: 45%;
             }
         }
+
+        &-btn {
+            @include adaptive-value('margin-top', 30, 15, 1);
+            margin-bottom: 0;
+            width: 100%;
+            @include flex(center, flex-end);
+        }
     }
 
     &__input--area {
@@ -74,6 +88,7 @@
     }
 }
 .contactus-content {
+    @include adaptive-value('margin-top', 50, 0, 1);
     padding-right: 15px;
 
     &__list {
@@ -85,12 +100,12 @@
 
     &__title {
         @include font(16, 16, 600, 19, 19);
-        color: $dark-grey-color;
+        color: $grey-400;
         margin-bottom: 1rem;
     }
 
     &__text {
         @include font(16, 16, 500, 19, 19);
-        color: $light-grey-color;
+        color: $grey-100;
     }
 }

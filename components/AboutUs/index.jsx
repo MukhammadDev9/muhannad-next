@@ -5,7 +5,7 @@ import { useIsMobile } from '@/hooks/useIsMobile';
 import { about__desc } from '@/utils/data';
 import StaffingModal from '@/components/Modals/StaffingModal';
 import { ArrowDown } from '@/components/icons';
-import AboutImage from '@/assets/images/About-us/About-us.png';
+import AboutImage from '@/assets/images/About-us/About-us.jpg';
 import clsx from 'clsx';
 
 const AboutUs = () => {
