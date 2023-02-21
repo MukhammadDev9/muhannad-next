@@ -8,8 +8,10 @@ const Input = (props) => {
             </label>
             {props.textarea ? (
                 <textarea
+                    onChange={(e) => props.handleChange(e, props.name)}
                     className="form__item_input form__item_input-textarea"
                     placeholder={props.placeholder}
+                    required={false}
                 />
             ) : (
                 <input
@@ -18,8 +20,11 @@ const Input = (props) => {
                     id={props.name}
                     name={props.name}
                     placeholder={props.placeholder}
+                    onChange={(e) => props.handleChange(e, props.name)}
+                    required={false}
                 />
             )}
+            <span className="error-message active">{props.message}</span>
         </div>
     );
 };

@@ -1,0 +1,8 @@
+.error-message {
+    display: none;
+    &.active {
+        display: inline-block;
+        @include font(14, 13, 500, 20, 18);
+        color: red;
+    }
+}

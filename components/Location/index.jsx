@@ -10,8 +10,7 @@ const Location = () => {
                     width="100%"
                     height="100%"
                     className="map"
-                    frameborder="1"
-                    allowfullscreen="true"
+                    allowFullScreen={true}
                 />
             </div>
         </div>

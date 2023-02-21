@@ -84,17 +84,17 @@ const Footer = () => {
                             <div className="footer-leaders__item">
                                 <p>
                                     <span className="span-block">
-                                        Руководитель органа по сертификации :
+                                        Руководитель органа по сертификации:
                                     </span>
                                     <span className="span-block">
-                                        Матниязов Кудрат Бахриярович.
+                                        Кадиров Учкун Ибодуллаевич.
                                     </span>
                                     <span className="span-block">
                                         Телефон:{' '}
                                         <span className="footer__link">
                                             <CallLink
-                                                callLink={'tel:+998932830319'}>
-                                                +998 93 283 09 19
+                                                callLink={'tel:+998919980999'}>
+                                                +998 91 998 09 99
                                             </CallLink>
                                         </span>
                                     </span>
