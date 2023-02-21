@@ -1,8 +1,12 @@
 .error-message {
-    display: none;
+    position: absolute;
+    top: 100%;
+    opacity: 1;
+    transition: opacity 0.2s;
+    @include font(14, 13, 500, 20, 18);
+    color: red;
+
     &.active {
-        display: inline-block;
-        @include font(14, 13, 500, 20, 18);
-        color: red;
+        opacity: 1;
     }
 }

@@ -18,7 +18,7 @@ export default function App({ Component, pageProps }) {
                 pauseOnHover
                 theme="colored"
             />
-            <Component {...pageProps} />;
+            <Component {...pageProps} />
         </>
     );
 }

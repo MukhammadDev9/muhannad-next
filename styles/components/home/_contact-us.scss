@@ -35,7 +35,7 @@
     @include adaptive-value('padding-left', 40, 12, 1);
 
     &__item {
-        margin-bottom: 1rem;
+        margin-bottom: 1.3rem;
         grid-column: span 2;
 
         &_label {
@@ -48,6 +48,10 @@
             border: 1px solid #e1e1e1;
             width: 100%;
             @include font(14, 12, 400, 17, 17);
+
+            &.error {
+                border-color: red;
+            }
 
             &::placeholder,
             &-textarea::placeholder {
@@ -85,6 +89,7 @@
     &__input--area {
         @include flex(flex-start, flex-end);
         flex-direction: column;
+        position: relative;
     }
 }
 .contactus-content {

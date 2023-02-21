@@ -7,7 +7,7 @@ const GoBack = () => {
         <div className="go-back">
             <Link href={'/'} className="go-back__link">
                 <BiArrowBack size={20} className="go-back__icon" />
-                Orqaga
+                Назад
             </Link>
         </div>
     );
