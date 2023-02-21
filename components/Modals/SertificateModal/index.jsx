@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { GrClose } from 'react-icons/gr';
 import clsx from 'clsx';
@@ -7,6 +7,14 @@ const SertificateModal = ({ show, setShow, image }) => {
     const onClose = () => {
         setShow(false);
     };
+
+    useEffect(() => {
+        if (show) {
+            document.body.classList.add('scroll-hidden');
+        } else {
+            document.body.classList.remove('scroll-hidden');
+        }
+    }, [show]);
 
     return (
         <div

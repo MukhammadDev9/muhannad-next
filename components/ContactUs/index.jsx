@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import CallLink from '../Atoms/CallLink';
 import SocialMedia from '../SocialMedia';
 import axios from 'axios';
 import { CHAT_ID, URL_API } from '@/utils/https';
+import { warning } from '@remix-run/router';
 
 const ContactUs = () => {
     const initialState = {
@@ -16,13 +18,44 @@ const ContactUs = () => {
     const onSubmit = async (event) => {
         event.preventDefault();
         const message = `<b>Имя:</b> ${details.name}\n<b>Фамилия:</b> ${details.surname}\n<b>Email:</b> ${details.email}\n<b>Сообщение:</b> ${details.message}\n`;
-        await axios.post(URL_API, {
-            chat_id: CHAT_ID,
-            parse_mode: 'html',
-            text: message,
-        });
-        setDetails(initialState);
+        try {
+            await axios.post(URL_API, {
+                chat_id: CHAT_ID,
+                parse_mode: 'html',
+                text: message,
+            });
+            notifySuccess();
+            setDetails(initialState);
+        } catch (e) {
+            notifyError(e);
+        }
     };
+
+    const notifySuccess = () => {
+        toast.success('Success!', {
+            position: 'top-center',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored',
+        });
+    };
+    const notifyError = (error) => {
+        toast.error(error, {
+            position: 'top-center',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored',
+        });
+    };
+
     return (
         <div id="contact-us" className="contactus">
             <h1 className="contactus__title title">Свяжитесь с нами онлайн</h1>

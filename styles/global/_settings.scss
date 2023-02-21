@@ -1,12 +1,10 @@
 body {
-    @include media-desktop(768) {
-        &.scroll-hidden {
-            overflow: hidden;
-            margin-right: 10px;
+    &.scroll-hidden {
+        overflow: hidden;
+        margin-right: 10px;
 
-            .header {
-                padding-right: 10px;
-            }
+        .header {
+            padding-right: 10px;
         }
     }
 }

@@ -1,23 +1,21 @@
 import React, { useEffect } from 'react';
-import { useIsMobile } from '@/hooks/useIsMobile';
-import { useKeyPress } from '@/hooks/useKeyPress';
-import Nav from '@/layout/Header/components/Nav';
 import { BiPhoneCall } from 'react-icons/bi';
 import { GrFormClose } from 'react-icons/gr';
-import CallLink from '../Atoms/CallLink';
 import clsx from 'clsx';
+import { useKeyPress } from '@/hooks/useKeyPress';
+import Nav from '@/layout/Header/components/Nav';
+import CallLink from '../Atoms/CallLink';
 
 const BurgerMenu = ({ show, setShow }) => {
-    const isMobile = useIsMobile(1024);
     const escape = useKeyPress('Escape');
 
     useEffect(() => {
-        if (isMobile) {
-            setShow(false);
+        if (show) {
+            document.body.classList.add('scroll-hidden');
         } else {
-            setShow(true);
+            document.body.classList.remove('scroll-hidden');
         }
-    }, []);
+    }, [show]);
 
     useEffect(() => {
         if (escape) {
