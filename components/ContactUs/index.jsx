@@ -5,11 +5,11 @@ import Form from '../Form';
 
 const ContactUs = () => {
     return (
-        <div id="contact-us" className="contactus">
+        <div className="contactus">
             <h1 className="contactus__title title">Свяжитесь с нами онлайн</h1>
             <div className="contactus__container">
                 <Form />
-                <div className="contactus-content">
+                <div id="contact-us" className="contactus-content">
                     <ul className="contactus-content__list">
                         <li className="contactus-content__item">
                             <h4 className="contactus-content__title">

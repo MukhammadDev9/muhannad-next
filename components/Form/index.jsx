@@ -7,7 +7,12 @@ import { CHAT_ID, URL_API } from '@/utils/https';
 const initialState = { name: '', surname: '', email: '', message: '' };
 const Form = () => {
     const [details, setDetails] = useState(initialState);
-    const [detailsError, setDetailsError] = useState(initialState);
+    const [detailsError, setDetailsError] = useState({
+        name: 'Имя не указано',
+        surname: 'Фамилия не указана',
+        email: 'Электронная почта не указана',
+        message: 'Сообщение не указано',
+    });
     const [formValid, setFormValid] = useState(false);
     const [detailsDirty, setDetailsDirty] = useState({
         name: false,
@@ -94,8 +99,17 @@ const Form = () => {
         e.preventDefault();
         const { name, surname, email, message } = details;
 
+        const obj = {
+            name: true,
+            surname: true,
+            email: true,
+            message: true,
+        };
+
         const send = `<b>Имя:</b> ${name}\n<b>Фамилия:</b> ${surname}\n<b>Электронная почта:</b> ${email}\n<b>Сообщение:</b> ${message}\n`;
         if (name === '' || surname === '' || email === '' || message === '') {
+            setDetailsDirty(obj);
+            setFormValid(false);
             toast.error('Заполните поля!');
         } else {
             if (formValid) {
@@ -215,7 +229,7 @@ const Form = () => {
                 </div>
             </div>
             <div className="form__item form__item-btn">
-                <button disabled={!formValid} type="submit" className="btn">
+                <button type="submit" className="btn">
                     Отправить
                 </button>
             </div>

@@ -43,32 +43,34 @@ const AboutUs = () => {
                             </li>
                         ))}
                     </ul>
-                </div>
-            </div>
 
-            <div className="about-bottom">
-                <a className="about-bottom__link" onClick={() => setShow(true)}>
-                    Сведения о кадровом составе
-                    {!isMobile && (
-                        <span className="about-bottom__icon about-bottom__icon-animate">
-                            <AiOutlineArrowRight />
-                        </span>
-                    )}
-                </a>
-                {isMobile && (
-                    <a
-                        className="about-bottom__link about-bottom__link-moredetails"
-                        onClick={toggle}>
-                        Подробнее
-                        <span
-                            className={clsx(
-                                'about-bottom__icon',
-                                openMore && 'active',
-                            )}>
-                            <ArrowDown />
-                        </span>
-                    </a>
-                )}
+                    <div className="about-bottom">
+                        <a
+                            className="about-bottom__link"
+                            onClick={() => setShow(true)}>
+                            Сведения о кадровом составе
+                            {!isMobile && (
+                                <span className="about-bottom__icon about-bottom__icon-animate">
+                                    <AiOutlineArrowRight />
+                                </span>
+                            )}
+                        </a>
+                        {isMobile && (
+                            <a
+                                className="about-bottom__link about-bottom__link-moredetails"
+                                onClick={toggle}>
+                                Подробнее
+                                <span
+                                    className={clsx(
+                                        'about-bottom__icon',
+                                        openMore && 'active',
+                                    )}>
+                                    <ArrowDown />
+                                </span>
+                            </a>
+                        )}
+                    </div>
+                </div>
             </div>
             <StaffingModal show={show} setShow={setShow} />
         </section>
