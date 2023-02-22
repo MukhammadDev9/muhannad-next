@@ -35,13 +35,8 @@ const BannerSwiper = () => {
             className="swiper">
             {images.map((item, i) => (
                 <SwiperSlide className="swiper--slide" key={i}>
-                    {i !== 4 && <BannerContent />}
-                    <div
-                        className={clsx(
-                            'black-filter',
-                            i === 4 && 'black-filter-light',
-                        )}
-                    />
+                    <BannerContent />
+                    <div className={clsx('black-filter')} />
                     <Image
                         className="swiper__image"
                         src={item}
