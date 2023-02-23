@@ -46,7 +46,7 @@ const Accordions = () => {
                         </ul>
                         <div className="accordion-moredetails">
                             <Link
-                                href={'/info'}
+                                href={`/info/${i}`}
                                 className="accordion-moredetails__link">
                                 Посмотреть еще...
                             </Link>
