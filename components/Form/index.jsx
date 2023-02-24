@@ -125,7 +125,10 @@ const Form = () => {
     };
 
     return (
-        <form className="contactus__form form" onSubmit={onSubmit}>
+        <form
+            id="#write-message"
+            className="contactus__form form"
+            onSubmit={onSubmit}>
             <p className="contactus__subtitle">Оставьте нам сообщение</p>
             <div className="form__item form__item-flex">
                 <div className="form__input--area">

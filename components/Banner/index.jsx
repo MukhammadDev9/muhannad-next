@@ -21,7 +21,7 @@ export const BannerContent = () => {
                 поставщиков строительной продукции и оказывает услуги по
                 сертификации и испытаниям данных продукций.
             </p>
-            <a href="#contact-us" className="banner__btn btn">
+            <a href="#write-message" className="banner__btn btn">
                 Написать нам письмо
             </a>
         </div>
